@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qh2-4j-SHH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vdY-tC-rEX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Collection Inicial-->
@@ -136,7 +138,6 @@
                                 </state>
                                 <connections>
                                     <action selector="addPessoaButton:" destination="Sef-Te-tjB" eventType="touchUpInside" id="cuW-ly-FVn"/>
-                                    <segue destination="OWd-Kz-6dc" kind="show" id="HPi-bV-POz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6S-Zn-NKV">
@@ -172,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="2695" y="55"/>
         </scene>
-        <!--View Controller-->
+        <!--Transacao View Controller-->
         <scene sceneID="Skt-S9-avk">
             <objects>
-                <viewController id="vdY-tC-rEX" sceneMemberID="viewController">
+                <viewController id="vdY-tC-rEX" customClass="TransacaoViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gfN-Hu-GZF"/>
                         <viewControllerLayoutGuide type="bottom" id="nR1-6N-dy9"/>
@@ -183,9 +184,86 @@
                     <view key="view" contentMode="scaleToFill" id="0Lz-vd-ELy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5z-N2-41L">
+                                <rect key="frame" x="56" y="102" width="104" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="WX7-6O-UNN"/>
+                                    <constraint firstAttribute="width" secondItem="U5z-N2-41L" secondAttribute="height" multiplier="3335:4000" id="qze-u9-rlD"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="verde.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEm-NY-MiX">
+                                <rect key="frame" x="200" y="102" width="104" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TEm-NY-MiX" secondAttribute="height" multiplier="3335:4000" id="LU9-kM-VtW"/>
+                                    <constraint firstAttribute="width" constant="104" id="p5i-14-72o"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="vermelho.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$0,00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-U9-CHX">
+                                <rect key="frame" x="175" y="285" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="LeM-Rz-D7V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vdY-tC-rEX" id="Oz0-PN-R9T"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lw8-ry-33D">
+                                <rect key="frame" x="292" y="444" width="16" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="H6Q-PF-9bk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HG4-Kv-a9J">
+                                <rect key="frame" x="248" y="323" width="104" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HG4-Kv-a9J" secondAttribute="height" multiplier="104:93" id="6oK-K5-pFQ"/>
+                                    <constraint firstAttribute="width" constant="104" id="qyV-dw-w9r"/>
+                                </constraints>
+                                <state key="normal" image="profileIcon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMl-Or-O7v">
+                                <rect key="frame" x="213" y="479" width="174" height="129"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iMl-Or-O7v" secondAttribute="height" multiplier="58:43" id="2Ku-Ss-9Yi"/>
+                                    <constraint firstAttribute="width" constant="174" id="b1X-XX-YTh"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="bump.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MGl-U9-CHX" firstAttribute="top" secondItem="U5z-N2-41L" secondAttribute="bottom" constant="58" id="47A-qW-fdn"/>
+                            <constraint firstItem="U5z-N2-41L" firstAttribute="bottom" secondItem="TEm-NY-MiX" secondAttribute="bottom" id="9fr-1y-Rpq"/>
+                            <constraint firstItem="U5z-N2-41L" firstAttribute="leading" secondItem="0Lz-vd-ELy" secondAttribute="leadingMargin" constant="40" id="NNZ-yf-RSg"/>
+                            <constraint firstItem="U5z-N2-41L" firstAttribute="top" secondItem="gfN-Hu-GZF" secondAttribute="bottom" constant="38" id="at6-9Z-vMf"/>
+                            <constraint firstItem="Lw8-ry-33D" firstAttribute="top" secondItem="HG4-Kv-a9J" secondAttribute="bottom" constant="28" id="dSA-Y8-ObI"/>
+                            <constraint firstItem="TEm-NY-MiX" firstAttribute="leading" secondItem="U5z-N2-41L" secondAttribute="trailing" constant="40" id="f8a-5w-ZSh"/>
+                            <constraint firstAttribute="centerX" secondItem="MGl-U9-CHX" secondAttribute="centerX" id="iQp-Hf-EsK"/>
+                            <constraint firstItem="iMl-Or-O7v" firstAttribute="top" secondItem="Lw8-ry-33D" secondAttribute="bottom" constant="14" id="kbN-Ez-Tuz"/>
+                            <constraint firstItem="iMl-Or-O7v" firstAttribute="centerX" secondItem="Lw8-ry-33D" secondAttribute="centerX" id="lLf-Po-fXV"/>
+                            <constraint firstItem="HG4-Kv-a9J" firstAttribute="centerX" secondItem="Lw8-ry-33D" secondAttribute="centerX" id="ozg-ec-bRM"/>
+                            <constraint firstItem="HG4-Kv-a9J" firstAttribute="top" secondItem="MGl-U9-CHX" secondAttribute="bottom" constant="8" id="unX-sY-5Ot"/>
+                            <constraint firstItem="HG4-Kv-a9J" firstAttribute="centerX" secondItem="MGl-U9-CHX" secondAttribute="centerX" id="xkZ-Ih-9fo"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="textFieldTransacao" destination="MGl-U9-CHX" id="BWX-Eo-E3H"/>
                         <segue destination="Y0N-PG-azh" kind="show" id="Dba-Ok-cn6"/>
                     </connections>
                 </viewController>
@@ -220,7 +298,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5r-hB-5aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3341" y="677"/>
+            <point key="canvasLocation" x="3545" y="1031"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lZA-RL-l5p">
@@ -243,9 +321,9 @@
     </scenes>
     <resources>
         <image name="123.png" width="20" height="20"/>
+        <image name="bump.png" width="420" height="330"/>
         <image name="profileIcon.png" width="250" height="250"/>
+        <image name="verde.png" width="3335" height="4343"/>
+        <image name="vermelho.png" width="3342" height="4335"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="HPi-bV-POz"/>
-    </inferredMetricsTieBreakers>
 </document>

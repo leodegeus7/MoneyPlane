@@ -75,7 +75,7 @@ class DataManager {
         indiceFoto++
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)
         var documentsDirectory: AnyObject = paths[0]
-        var path = documentsDirectory.stringByAppendingString("\(indiceFotoString)")
+        var path = documentsDirectory.stringByAppendingString("\(indiceFotoString).png")
         var data = UIImagePNGRepresentation(imagem)
         data.writeToFile(path, atomically: true)
         return path
@@ -88,4 +88,13 @@ class DataManager {
         alert.addAction(action)
         viewController.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    
+    //SHAKE!!
+    
+    
+    
+    
+    
+    
 }

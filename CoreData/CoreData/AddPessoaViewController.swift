@@ -31,7 +31,7 @@ class AddPessoaViewController: UIViewController,UITextFieldDelegate,UIImagePicke
     }
     
     @IBAction func addPessoaButton(sender: AnyObject) {
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
@@ -56,6 +56,7 @@ class AddPessoaViewController: UIViewController,UITextFieldDelegate,UIImagePicke
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         var image = info[UIImagePickerControllerOriginalImage] as! UIImage
         var path = DataManager.instance.salvarImagem(image)
+        println("\(path)")
         charIconButton.setImage(image, forState: UIControlState.Normal)
         picker.dismissViewControllerAnimated(true, completion: nil)
 
