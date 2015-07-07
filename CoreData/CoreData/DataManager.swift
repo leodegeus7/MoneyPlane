@@ -11,10 +11,9 @@ import CoreData
 
 class DataManager {
     
-    
     static let instance: DataManager = DataManager()
 
-    
+    var indiceFoto = 0
     
     //Linha mágica do CoreData:
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
@@ -62,4 +61,31 @@ class DataManager {
         
     }
     
+    func carregarImagem(nomeImagem:String) -> UIImage {
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)
+        var documentsDirectory: AnyObject = paths[0]
+        var path = documentsDirectory.stringByAppendingString("\(nomeImagem)")
+        var image = UIImage(contentsOfFile: path)
+        return image!
+    }
+    
+    
+    func salvarImagem(imagem:UIImage)->String {
+        var indiceFotoString = "Fotos\(indiceFoto)"
+        indiceFoto++
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)
+        var documentsDirectory: AnyObject = paths[0]
+        var path = documentsDirectory.stringByAppendingString("\(indiceFotoString)")
+        var data = UIImagePNGRepresentation(imagem)
+        data.writeToFile(path, atomically: true)
+        return path
+    }
+    
+    
+    func showSimpleAlertWithTitle(title: String!, message: String, viewController: UIViewController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+        alert.addAction(action)
+        viewController.presentViewController(alert, animated: true, completion: nil)
+    }
 }

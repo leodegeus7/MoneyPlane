@@ -14,10 +14,9 @@ class CollectionInicialCell: UICollectionViewCell {
 
     @IBOutlet weak var viewUsuario: UIView!
     
-    @IBOutlet weak var texttESTE: UILabel!
 
+    @IBOutlet weak var imagePessoa: UIImageView!
 
 
     
 }
-

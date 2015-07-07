@@ -18,6 +18,8 @@
 		CD2A16CF1B4B34DB00009956 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16CE1B4B34DB00009956 /* 123.png */; };
 		CD2A16D11B4B356B00009956 /* CollectionInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16D01B4B356B00009956 /* CollectionInicial.swift */; };
 		CD2A16D31B4B357F00009956 /* CollectionInicialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */; };
+		CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */; };
+		CD2A16DD1B4B666A00009956 /* profileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16DC1B4B666A00009956 /* profileIcon.png */; };
 		CD3E159F1B4B160B00253220 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E159E1B4B160B00253220 /* DataManager.swift */; };
 		CD3E15A11B4B210900253220 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E15A01B4B210900253220 /* Pessoa.swift */; };
 		CD3E15A31B4B210900253220 /* Entrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E15A21B4B210900253220 /* Entrada.swift */; };
@@ -49,6 +51,8 @@
 		CD2A16CE1B4B34DB00009956 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		CD2A16D01B4B356B00009956 /* CollectionInicial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionInicial.swift; sourceTree = "<group>"; };
 		CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionInicialCell.swift; sourceTree = "<group>"; };
+		CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPessoaViewController.swift; sourceTree = "<group>"; };
+		CD2A16DC1B4B666A00009956 /* profileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileIcon.png; sourceTree = "<group>"; };
 		CD3E159E1B4B160B00253220 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CD3E15A01B4B210900253220 /* Pessoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 		CD3E15A21B4B210900253220 /* Entrada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entrada.swift; sourceTree = "<group>"; };
@@ -93,20 +97,11 @@
 		A7E1E7E11B45C7DB00151D74 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				CD3E15A21B4B210900253220 /* Entrada.swift */,
-				CD3E15A01B4B210900253220 /* Pessoa.swift */,
-				A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */,
-				CD2A16CC1B4B342B00009956 /* arrowIcon.png */,
-				CD2A16CE1B4B34DB00009956 /* 123.png */,
-				A7E1E7E91B45C7DC00151D74 /* ViewController.swift */,
-				A7E1E7EB1B45C7DC00151D74 /* Main.storyboard */,
-				CD3E159E1B4B160B00253220 /* DataManager.swift */,
-				A7E1E7EE1B45C7DC00151D74 /* Images.xcassets */,
-				A7E1E7F01B45C7DC00151D74 /* LaunchScreen.xib */,
-				A7E1E7E61B45C7DC00151D74 /* CoreData.xcdatamodeld */,
+				CD2A16D91B4B5A2500009956 /* Controller */,
+				CD2A16D81B4B59D500009956 /* Resources */,
+				CD2A16D71B4B59D000009956 /* View */,
+				CD2A16D61B4B59C600009956 /* Model */,
 				A7E1E7E21B45C7DB00151D74 /* Supporting Files */,
-				CD2A16D01B4B356B00009956 /* CollectionInicial.swift */,
-				CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -134,6 +129,49 @@
 				A7E1E7FC1B45C7DC00151D74 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD2A16D61B4B59C600009956 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD3E159E1B4B160B00253220 /* DataManager.swift */,
+				A7E1E7E61B45C7DC00151D74 /* CoreData.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CD2A16D71B4B59D000009956 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7E1E7EB1B45C7DC00151D74 /* Main.storyboard */,
+				A7E1E7F01B45C7DC00151D74 /* LaunchScreen.xib */,
+				A7E1E7EE1B45C7DC00151D74 /* Images.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CD2A16D81B4B59D500009956 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD2A16DC1B4B666A00009956 /* profileIcon.png */,
+				CD2A16CC1B4B342B00009956 /* arrowIcon.png */,
+				CD2A16CE1B4B34DB00009956 /* 123.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CD2A16D91B4B5A2500009956 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD3E15A01B4B210900253220 /* Pessoa.swift */,
+				A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */,
+				CD3E15A21B4B210900253220 /* Entrada.swift */,
+				A7E1E7E91B45C7DC00151D74 /* ViewController.swift */,
+				CD2A16D01B4B356B00009956 /* CollectionInicial.swift */,
+				CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */,
+				CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +258,7 @@
 				A7E1E7ED1B45C7DC00151D74 /* Main.storyboard in Resources */,
 				A7E1E7F21B45C7DC00151D74 /* LaunchScreen.xib in Resources */,
 				A7E1E7EF1B45C7DC00151D74 /* Images.xcassets in Resources */,
+				CD2A16DD1B4B666A00009956 /* profileIcon.png in Resources */,
 				CD2A16CF1B4B34DB00009956 /* 123.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +284,7 @@
 				CD3E15A31B4B210900253220 /* Entrada.swift in Sources */,
 				A7E1E7E81B45C7DC00151D74 /* CoreData.xcdatamodeld in Sources */,
 				CD2A16D11B4B356B00009956 /* CollectionInicial.swift in Sources */,
+				CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */,
 				A7E1E7E51B45C7DC00151D74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
