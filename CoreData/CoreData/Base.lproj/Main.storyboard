@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qh2-4j-SHH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y0N-PG-azh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Collection Inicial-->
@@ -101,7 +103,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inr-zZ-7Qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="677"/>
+            <point key="canvasLocation" x="1787" y="861"/>
         </scene>
         <!--Add Pessoa View Controller-->
         <scene sceneID="6jE-aH-0pc">
@@ -193,20 +195,60 @@
             </objects>
             <point key="canvasLocation" x="2695" y="937"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Escolha Pessoa Table View Controller-->
         <scene sceneID="yWE-C3-MIU">
             <objects>
-                <tableViewController id="Y0N-PG-azh" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9Fu-CO-Nsg">
+                <tableViewController id="Y0N-PG-azh" customClass="EscolhaPessoaTableViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="22" sectionFooterHeight="22" id="9Fu-CO-Nsg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SXB-uL-dJL">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="115" reuseIdentifier="cell" rowHeight="115" id="SXB-uL-dJL" customClass="EscolhaPessoaTableViewCell" customModule="CoreData" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SXB-uL-dJL" id="s85-me-SlP">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E6Z-T4-5hT">
+                                            <rect key="frame" x="20" y="13" width="83" height="87.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="E6Z-T4-5hT" secondAttribute="height" multiplier="83:87" id="gV8-JN-olu"/>
+                                                <constraint firstAttribute="width" constant="83" id="pdq-dV-mHE"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4y-M7-hjB">
+                                            <rect key="frame" x="154" y="28" width="407" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="407" id="dFC-GS-PBb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4o6-VT-MCR">
+                                            <rect key="frame" x="154" y="75.5" width="407" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="407" id="Lpq-aX-Yjz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4o6-VT-MCR" firstAttribute="top" secondItem="g4y-M7-hjB" secondAttribute="bottom" constant="27" id="15r-BH-L5x"/>
+                                        <constraint firstItem="E6Z-T4-5hT" firstAttribute="top" secondItem="s85-me-SlP" secondAttribute="topMargin" constant="5" id="E1C-1C-I1m"/>
+                                        <constraint firstItem="g4y-M7-hjB" firstAttribute="centerX" secondItem="4o6-VT-MCR" secondAttribute="centerX" id="KcX-rQ-gNp"/>
+                                        <constraint firstItem="g4y-M7-hjB" firstAttribute="leading" secondItem="s85-me-SlP" secondAttribute="leadingMargin" constant="146" id="c5o-O4-AmN"/>
+                                        <constraint firstItem="g4y-M7-hjB" firstAttribute="top" secondItem="s85-me-SlP" secondAttribute="topMargin" constant="20" id="gmZ-o3-3kq"/>
+                                        <constraint firstItem="E6Z-T4-5hT" firstAttribute="leading" secondItem="s85-me-SlP" secondAttribute="leadingMargin" constant="12" id="tzd-iy-k3L"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagemPessoa" destination="E6Z-T4-5hT" id="fJY-3Z-euF"/>
+                                    <outlet property="nomePessoa" destination="g4y-M7-hjB" id="eqo-aI-OTO"/>
+                                    <outlet property="saldoPessoa" destination="4o6-VT-MCR" id="gtp-I2-mrY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -220,7 +262,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5r-hB-5aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3341" y="677"/>
+            <point key="canvasLocation" x="3535" y="763"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lZA-RL-l5p">
