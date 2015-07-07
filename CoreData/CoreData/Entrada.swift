@@ -1,9 +1,9 @@
 //
 //  Entrada.swift
-//  CoreData
+//  
 //
-//  Created by Leonardo Geus on 06/07/15.
-//  Copyright (c) 2015 Leonardo Koppe Malanski. All rights reserved.
+//  Created by Felipe Ramon de Lara on 7/7/15.
+//
 //
 
 import Foundation
@@ -11,9 +11,10 @@ import CoreData
 
 class Entrada: NSManagedObject {
 
-    @NSManaged var data: String
+    @NSManaged var data: NSDate
     @NSManaged var descricao: String
     @NSManaged var valor: NSNumber
+    @NSManaged var tipo: String
     @NSManaged var individuo: Pessoa
 
 }

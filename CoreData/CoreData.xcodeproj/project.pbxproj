@@ -21,8 +21,8 @@
 		CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */; };
 		CD2A16DD1B4B666A00009956 /* profileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16DC1B4B666A00009956 /* profileIcon.png */; };
 		CD3E159F1B4B160B00253220 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E159E1B4B160B00253220 /* DataManager.swift */; };
-		CD3E15A11B4B210900253220 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E15A01B4B210900253220 /* Pessoa.swift */; };
-		CD3E15A31B4B210900253220 /* Entrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E15A21B4B210900253220 /* Entrada.swift */; };
+		E491CD841B4C449200461890 /* Entrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491CD821B4C449200461890 /* Entrada.swift */; };
+		E491CD851B4C449200461890 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491CD831B4C449200461890 /* Pessoa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPessoaViewController.swift; sourceTree = "<group>"; };
 		CD2A16DC1B4B666A00009956 /* profileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileIcon.png; sourceTree = "<group>"; };
 		CD3E159E1B4B160B00253220 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		CD3E15A01B4B210900253220 /* Pessoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
-		CD3E15A21B4B210900253220 /* Entrada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entrada.swift; sourceTree = "<group>"; };
+		E491CD821B4C449200461890 /* Entrada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entrada.swift; sourceTree = "<group>"; };
+		E491CD831B4C449200461890 /* Pessoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,9 +163,9 @@
 		CD2A16D91B4B5A2500009956 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CD3E15A01B4B210900253220 /* Pessoa.swift */,
+				E491CD821B4C449200461890 /* Entrada.swift */,
+				E491CD831B4C449200461890 /* Pessoa.swift */,
 				A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */,
-				CD3E15A21B4B210900253220 /* Entrada.swift */,
 				A7E1E7E91B45C7DC00151D74 /* ViewController.swift */,
 				CD2A16D01B4B356B00009956 /* CollectionInicial.swift */,
 				CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */,
@@ -277,15 +277,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD3E15A11B4B210900253220 /* Pessoa.swift in Sources */,
 				A7E1E7EA1B45C7DC00151D74 /* ViewController.swift in Sources */,
 				CD3E159F1B4B160B00253220 /* DataManager.swift in Sources */,
 				CD2A16D31B4B357F00009956 /* CollectionInicialCell.swift in Sources */,
-				CD3E15A31B4B210900253220 /* Entrada.swift in Sources */,
 				A7E1E7E81B45C7DC00151D74 /* CoreData.xcdatamodeld in Sources */,
+				E491CD851B4C449200461890 /* Pessoa.swift in Sources */,
 				CD2A16D11B4B356B00009956 /* CollectionInicial.swift in Sources */,
 				CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */,
 				A7E1E7E51B45C7DC00151D74 /* AppDelegate.swift in Sources */,
+				E491CD841B4C449200461890 /* Entrada.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
