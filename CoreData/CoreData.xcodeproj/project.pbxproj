@@ -16,6 +16,8 @@
 		A7E1E7FE1B45C7DC00151D74 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1E7FD1B45C7DC00151D74 /* CoreDataTests.swift */; };
 		A7F793411B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F793401B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift */; };
 		A7F793431B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F793421B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift */; };
+		A7F793451B4C2B3D001E98AB /* ExtratoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */; };
+		A7F793471B4C2BA9001E98AB /* ExtratoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F793461B4C2BA9001E98AB /* ExtratoTableViewCell.swift */; };
 		CD2A16CD1B4B342B00009956 /* arrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16CC1B4B342B00009956 /* arrowIcon.png */; };
 		CD2A16CF1B4B34DB00009956 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16CE1B4B34DB00009956 /* 123.png */; };
 		CD2A16D11B4B356B00009956 /* CollectionInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16D01B4B356B00009956 /* CollectionInicial.swift */; };
@@ -51,6 +53,8 @@
 		A7E1E7FD1B45C7DC00151D74 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		A7F793401B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolhaPessoaTableViewController.swift; sourceTree = "<group>"; };
 		A7F793421B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EscolhaPessoaTableViewCell.swift; path = ../EscolhaPessoaTableViewCell.swift; sourceTree = "<group>"; };
+		A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtratoTableViewController.swift; path = ../ExtratoTableViewController.swift; sourceTree = "<group>"; };
+		A7F793461B4C2BA9001E98AB /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtratoTableViewCell.swift; path = ../ExtratoTableViewCell.swift; sourceTree = "<group>"; };
 		CD2A16CC1B4B342B00009956 /* arrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowIcon.png; sourceTree = "<group>"; };
 		CD2A16CE1B4B34DB00009956 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		CD2A16D01B4B356B00009956 /* CollectionInicial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionInicial.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */,
 				A7F793401B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift */,
 				A7F793421B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift */,
+				A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */,
+				A7F793461B4C2BA9001E98AB /* ExtratoTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -289,11 +295,13 @@
 				CD2A16D31B4B357F00009956 /* CollectionInicialCell.swift in Sources */,
 				CD3E15A31B4B210900253220 /* Entrada.swift in Sources */,
 				A7E1E7E81B45C7DC00151D74 /* CoreData.xcdatamodeld in Sources */,
+				A7F793451B4C2B3D001E98AB /* ExtratoTableViewController.swift in Sources */,
 				A7F793431B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift in Sources */,
 				A7F793411B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift in Sources */,
 				CD2A16D11B4B356B00009956 /* CollectionInicial.swift in Sources */,
 				CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */,
 				A7E1E7E51B45C7DC00151D74 /* AppDelegate.swift in Sources */,
+				A7F793471B4C2BA9001E98AB /* ExtratoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

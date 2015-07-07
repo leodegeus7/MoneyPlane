@@ -1,5 +1,5 @@
 //
-//  EscolhaPessoaTableViewController.swift
+//  ExtratoTableViewController.swift
 //  CoreData
 //
 //  Created by Leonardo Koppe Malanski on 07/07/15.
@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Foundation
 
-class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class ExtratoTableViewController: UITableViewController {
+
+    var numerodeCells = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,47 +36,28 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        var numeroDeCells = 5
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-    
-        return numeroDeCells
+        return numerodeCells
     }
+    
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! EscolhaPessoaTableViewCell
+        let cell1 = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! ExtratoTableViewCell
 
-        switch indexPath.row {
-        case 0:
-            cell.nomePessoa.text = "Leonardo de Geus"
-            cell.saldoPessoa.text = "-15,30"
-        case 1:
-            cell.nomePessoa.text = "Leonardo Piovezan"
-            cell.saldoPessoa.text = "1,30"
-        break
-        default:
-            cell.nomePessoa.text = "Default"
-            cell.saldoPessoa.text = "Nil"
-        }
-        
-        cell.imagemPessoa.image = UIImage (named: "profileIcon")
-        cell.imagemPessoa?.layer.borderWidth = 2.0
-        cell.imagemPessoa?.layer.masksToBounds = false
-        cell.imagemPessoa?.layer.cornerRadius = 30
-        cell.imagemPessoa?.clipsToBounds = true
-        cell.saldoPessoa.textColor = UIColor.darkGrayColor()
-        cell.nomePessoa.textColor = UIColor.darkGrayColor()
-    
-        if (cell.saldoPessoa.text as! NSString).containsString("-") {
-            cell.imagemPessoa?.layer.borderColor = UIColor.redColor().CGColor
-        
+        if indexPath.row == (numerodeCells-1) {
+            cell1.valorTransacao.text = "-35,00"
+            cell1.dataTransacao.text = "Saldo"
+            if (cell1.valorTransacao.text as! NSString).containsString("-") {
+                cell1.valorTransacao.textColor = UIColor.redColor()
+            }
+
         } else {
-            cell.imagemPessoa?.layer.borderColor = UIColor.blueColor().CGColor
+            cell1.dataTransacao.text = "01/01/2015"
+            cell1.valorTransacao.text = "-5,00"
         }
-        
-        return cell
+        return cell1
+        // Configure the cell...
+
     }
 
 
@@ -88,17 +69,8 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+    
+   
 
     /*
     // Override to support rearranging the table view.
