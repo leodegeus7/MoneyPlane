@@ -36,7 +36,7 @@ class ExtratoTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numerodeCells
+        return 5 
     }
     
 
@@ -49,6 +49,7 @@ class ExtratoTableViewController: UITableViewController {
             cell1.dataTransacao.text = "Saldo"
             if (cell1.valorTransacao.text as! NSString).containsString("-") {
                 cell1.valorTransacao.textColor = UIColor.redColor()
+            
             }
 
         } else {

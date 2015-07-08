@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7D7371B1B4DBE0C00001FDD /* TransacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7371A1B4DBE0C00001FDD /* TransacaoViewController.swift */; };
+		A7D7371F1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7371C1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift */; };
+		A7D737201B4DBFD500001FDD /* ExtratoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7371D1B4DBFD500001FDD /* ExtratoTableViewCell.swift */; };
+		A7D737211B4DBFD500001FDD /* ExtratoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7371E1B4DBFD500001FDD /* ExtratoTableViewController.swift */; };
 		A7E1E7E51B45C7DC00151D74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */; };
 		A7E1E7E81B45C7DC00151D74 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7E1E7E61B45C7DC00151D74 /* CoreData.xcdatamodeld */; };
 		A7E1E7EA1B45C7DC00151D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1E7E91B45C7DC00151D74 /* ViewController.swift */; };
@@ -24,7 +28,6 @@
 		CD2A16E51B4C472D00009956 /* vermelho.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16E41B4C472D00009956 /* vermelho.png */; };
 		CD2A16E91B4C4BD400009956 /* bump.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16E81B4C4BD400009956 /* bump.png */; };
 		CD3E159F1B4B160B00253220 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E159E1B4B160B00253220 /* DataManager.swift */; };
-		E4036E561B4D874400F8D1D7 /* TransacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4036E551B4D874400F8D1D7 /* TransacaoViewController.swift */; };
 		E491CD841B4C449200461890 /* Entrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491CD821B4C449200461890 /* Entrada.swift */; };
 		E491CD851B4C449200461890 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491CD831B4C449200461890 /* Pessoa.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7D7371A1B4DBE0C00001FDD /* TransacaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransacaoViewController.swift; sourceTree = "<group>"; };
+		A7D7371C1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolhaPessoaTableViewCell.swift; sourceTree = "<group>"; };
+		A7D7371D1B4DBFD500001FDD /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtratoTableViewCell.swift; sourceTree = "<group>"; };
+		A7D7371E1B4DBFD500001FDD /* ExtratoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtratoTableViewController.swift; sourceTree = "<group>"; };
 		A7E1E7DF1B45C7DB00151D74 /* CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E1E7E31B45C7DC00151D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,9 +59,6 @@
 		A7E1E7FC1B45C7DC00151D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7E1E7FD1B45C7DC00151D74 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		A7F793401B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolhaPessoaTableViewController.swift; sourceTree = "<group>"; };
-		A7F793421B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EscolhaPessoaTableViewCell.swift; path = ../EscolhaPessoaTableViewCell.swift; sourceTree = "<group>"; };
-		A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtratoTableViewController.swift; path = ../ExtratoTableViewController.swift; sourceTree = "<group>"; };
-		A7F793461B4C2BA9001E98AB /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtratoTableViewCell.swift; path = ../ExtratoTableViewCell.swift; sourceTree = "<group>"; };
 		CD2A16CC1B4B342B00009956 /* arrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowIcon.png; sourceTree = "<group>"; };
 		CD2A16CE1B4B34DB00009956 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		CD2A16D01B4B356B00009956 /* CollectionInicial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionInicial.swift; sourceTree = "<group>"; };
@@ -66,7 +70,6 @@
 		CD2A16E41B4C472D00009956 /* vermelho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vermelho.png; sourceTree = "<group>"; };
 		CD2A16E81B4C4BD400009956 /* bump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump.png; sourceTree = "<group>"; };
 		CD3E159E1B4B160B00253220 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		E4036E551B4D874400F8D1D7 /* TransacaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransacaoViewController.swift; sourceTree = "<group>"; };
 		E491CD821B4C449200461890 /* Entrada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entrada.swift; sourceTree = "<group>"; };
 		E491CD831B4C449200461890 /* Pessoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,14 +187,14 @@
 				E491CD831B4C449200461890 /* Pessoa.swift */,
 				A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */,
 				A7E1E7E91B45C7DC00151D74 /* ViewController.swift */,
+				A7D7371C1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift */,
+				A7D7371D1B4DBFD500001FDD /* ExtratoTableViewCell.swift */,
+				A7D7371E1B4DBFD500001FDD /* ExtratoTableViewController.swift */,
 				CD2A16D01B4B356B00009956 /* CollectionInicial.swift */,
 				CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */,
 				CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */,
-				E4036E551B4D874400F8D1D7 /* TransacaoViewController.swift */,
 				A7F793401B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift */,
-				A7F793421B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift */,
-				A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */,
-				A7F793461B4C2BA9001E98AB /* ExtratoTableViewCell.swift */,
+				A7D7371A1B4DBE0C00001FDD /* TransacaoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -302,12 +305,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D737211B4DBFD500001FDD /* ExtratoTableViewController.swift in Sources */,
 				A7E1E7EA1B45C7DC00151D74 /* ViewController.swift in Sources */,
 				CD3E159F1B4B160B00253220 /* DataManager.swift in Sources */,
 				CD2A16D31B4B357F00009956 /* CollectionInicialCell.swift in Sources */,
-				E4036E561B4D874400F8D1D7 /* TransacaoViewController.swift in Sources */,
+				A7D7371B1B4DBE0C00001FDD /* TransacaoViewController.swift in Sources */,
 				A7E1E7E81B45C7DC00151D74 /* CoreData.xcdatamodeld in Sources */,
 				E491CD851B4C449200461890 /* Pessoa.swift in Sources */,
+				A7D7371F1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift in Sources */,
+				A7D737201B4DBFD500001FDD /* ExtratoTableViewCell.swift in Sources */,
 				CD2A16D11B4B356B00009956 /* CollectionInicial.swift in Sources */,
 				CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */,
 				A7E1E7E51B45C7DC00151D74 /* AppDelegate.swift in Sources */,
@@ -443,6 +449,7 @@
 				INFOPLIST_FILE = CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Debug;
 		};
@@ -453,6 +460,7 @@
 				INFOPLIST_FILE = CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Release;
 		};
