@@ -35,9 +35,9 @@ class AddPessoaViewController: UIViewController,UITextFieldDelegate,UIImagePicke
     @IBAction func addPessoaBotao(sender: UIButton) {
         if !(nomePessoa.text.isEmpty) {
             if controleFoto {
-        DataManager.instance.addPessoa(nomePessoa.text, myPeerID: "", imagem: "DocumentsFotos\(DataManager.instance.indiceFoto)")
-        navigationController?.popToRootViewControllerAnimated(true)
-        controleFoto = false
+                DataManager.instance.addPessoa(nomePessoa.text, myPeerID: "", imagem: "Fotos\(DataManager.instance.indiceFoto)")
+                navigationController?.popToRootViewControllerAnimated(true)
+                controleFoto = false
             }
             else {
                 DataManager.instance.mostrarUIAlert("Atenção", message: "Clique no personagem para adicionar uma foto", viewController: self)

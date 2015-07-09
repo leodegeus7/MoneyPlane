@@ -118,7 +118,7 @@ class DataManager {
     
     
     func salvarImagem(imagem:UIImage)->String {
-        var indiceFotoString = "Fotos\(indiceFoto)"
+        var indiceFotoString = "/Fotos\(indiceFoto)"
         indiceFoto++
         salvarIndiceFotoTXT()
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)
@@ -126,6 +126,13 @@ class DataManager {
         var path = documentsDirectory.stringByAppendingString("\(indiceFotoString).png")
         var data = UIImagePNGRepresentation(imagem)
         data.writeToFile(path, atomically: true)
+        return path
+    }
+    
+    func acharImagemUser(imagem:String)->String {
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)
+        var documentsDirectory: AnyObject = paths[0]
+        var path = documentsDirectory.stringByAppendingString("/\(imagem).png")
         return path
     }
     
@@ -227,7 +234,45 @@ class DataManager {
     }
     
     
+
+    func searchInPessoaEntity(predicate: NSPredicate) -> [Pessoa]? {
+
+        let request = NSFetchRequest(entityName: "Pessoa")
+        request.predicate = predicate
+
+        var error : NSError?
+        var objetos = managedContext.executeFetchRequest(request, error: &error)
+
+        if let results = objetos{
+            return results as? [Pessoa]
+        } else{
+            return nil
+        }
+
+    }
     
-    
-    
+
+    //func alterarNomePessoa(name:String) ->Bool {
+    ////Carregar a pessoa com a qual a transaçao foi feita
+    //
+    //let request = NSFetchRequest(entityName: "Pessoa")
+    //request.predicate = NSPredicate(format: "nome BEGINSWITH[cd] %@", name)
+    //
+    //
+    //var error : NSError?
+    //var objetos = managedContext.executeFetchRequest(request, error: &error)
+    //
+    //if let persons = objetos {
+    //if error == nil {
+    //for person in persons {
+    //(person as! Pessoa).nome = "ALTERADO"
+    //}
+    //}
+    //}
+    //
+    //return managedContext.save(&error)
+    //}*/
+    //
+    //
+    //
 }

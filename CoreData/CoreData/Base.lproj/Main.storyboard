@@ -46,9 +46,13 @@
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VC8-pq-Rco" userLabel="ViewUsuario">
                                                     <rect key="frame" x="0.0" y="0.0" width="115" height="112"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-vT-WqC">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-vT-WqC">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="112"/>
                                                             <color key="backgroundColor" red="0.49209126349999999" green="0.86000001429999995" blue="0.56752301829999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="115" id="44R-vf-wBE"/>
+                                                                <constraint firstAttribute="height" constant="112" id="Sb5-wm-Eqk"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

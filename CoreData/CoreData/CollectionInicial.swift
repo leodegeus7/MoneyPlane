@@ -21,6 +21,7 @@ var timerDesativarShake:NSTimer!
 let manager = CMMotionManager()
 var controleShake = true
 var pessoaLista = DataManager.instance.getPessoa()
+var pessoaListaArray = [NSDictionary]()
 
 
 class CollectionInicial: UICollectionViewController {
@@ -40,15 +41,25 @@ class CollectionInicial: UICollectionViewController {
                         controleShake = false}
                     
                     
-                }
+            }
         }
         
-        
+        for _ in 1...pessoaLista!.count {
+            var trueBool = true
+            controle.append(trueBool)}
+
         for pessoa in pessoaLista! {
-            println("anTES\(pessoa.nome)  \(pessoa.foto)")
+            let nome = pessoa.nome
+            let myPeerId = pessoa.myPeerID
+            let transacoes = pessoa.transacao
+            let foto = pessoa.foto
+            let dicionario = ["nome":nome,"myPeerId":myPeerId,"transacao":transacoes,"foto":foto]
+            pessoaListaArray.append(dicionario)
             
             
         }
+        
+
         
     }
 
@@ -103,11 +114,8 @@ extension CollectionInicial : UICollectionViewDataSource {
     
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var numeroDeCelulas = 5
-        for _ in 1...numeroDeCelulas {
-            var trueBool = true
-            controle.append(trueBool)}
-        return numeroDeCelulas    }
+
+        return pessoaLista!.count    }
     
     
     
@@ -124,6 +132,9 @@ extension CollectionInicial : UICollectionViewDataSource {
         cell.imagePessoa.clipsToBounds = true
         
         
+        let caminhoImagem = DataManager.instance.acharImagemUser(pessoaListaArray[indexPath.row]["foto"] as! String)
+        println(caminhoImagem)
+        cell.imagePessoa.image = UIImage(contentsOfFile: caminhoImagem)
         
         return cell
     }
@@ -159,6 +170,8 @@ extension CollectionInicial : UICollectionViewDataSource {
     
     override func viewDidAppear(animated: Bool) {
         shake()
+        self.collectionView?.reloadData()
+        
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -186,7 +199,6 @@ func shake() {
     multiPeer.serviceAdvertiser.startAdvertisingPeer()
     multiPeer.serviceBrowser.startBrowsingForPeers()
     println("ligadoServico")
-//    transacaoView.controle = false
 
 
 }
