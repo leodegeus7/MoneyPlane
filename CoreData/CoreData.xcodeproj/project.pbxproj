@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7D7371B1B4DBE0C00001FDD /* TransacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7371A1B4DBE0C00001FDD /* TransacaoViewController.swift */; };
+		A7D7371F1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7371C1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift */; };
+		A7D737201B4DBFD500001FDD /* ExtratoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7371D1B4DBFD500001FDD /* ExtratoTableViewCell.swift */; };
+		A7D737211B4DBFD500001FDD /* ExtratoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7371E1B4DBFD500001FDD /* ExtratoTableViewController.swift */; };
 		A7E1E7E51B45C7DC00151D74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */; };
 		A7E1E7E81B45C7DC00151D74 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7E1E7E61B45C7DC00151D74 /* CoreData.xcdatamodeld */; };
 		A7E1E7EA1B45C7DC00151D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1E7E91B45C7DC00151D74 /* ViewController.swift */; };
@@ -14,10 +18,6 @@
 		A7E1E7EF1B45C7DC00151D74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E1E7EE1B45C7DC00151D74 /* Images.xcassets */; };
 		A7E1E7F21B45C7DC00151D74 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E1E7F01B45C7DC00151D74 /* LaunchScreen.xib */; };
 		A7E1E7FE1B45C7DC00151D74 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1E7FD1B45C7DC00151D74 /* CoreDataTests.swift */; };
-		A7F793411B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F793401B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift */; };
-		A7F793431B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F793421B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift */; };
-		A7F793451B4C2B3D001E98AB /* ExtratoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */; };
-		A7F793471B4C2BA9001E98AB /* ExtratoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F793461B4C2BA9001E98AB /* ExtratoTableViewCell.swift */; };
 		CD2A16CD1B4B342B00009956 /* arrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16CC1B4B342B00009956 /* arrowIcon.png */; };
 		CD2A16CF1B4B34DB00009956 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16CE1B4B34DB00009956 /* 123.png */; };
 		CD2A16D11B4B356B00009956 /* CollectionInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16D01B4B356B00009956 /* CollectionInicial.swift */; };
@@ -45,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7D7371A1B4DBE0C00001FDD /* TransacaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransacaoViewController.swift; sourceTree = "<group>"; };
+		A7D7371C1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolhaPessoaTableViewCell.swift; sourceTree = "<group>"; };
+		A7D7371D1B4DBFD500001FDD /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtratoTableViewCell.swift; sourceTree = "<group>"; };
+		A7D7371E1B4DBFD500001FDD /* ExtratoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtratoTableViewController.swift; sourceTree = "<group>"; };
 		A7E1E7DF1B45C7DB00151D74 /* CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E1E7E31B45C7DC00151D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +61,6 @@
 		A7E1E7FC1B45C7DC00151D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7E1E7FD1B45C7DC00151D74 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		A7F793401B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolhaPessoaTableViewController.swift; sourceTree = "<group>"; };
-		A7F793421B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EscolhaPessoaTableViewCell.swift; path = ../EscolhaPessoaTableViewCell.swift; sourceTree = "<group>"; };
-		A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtratoTableViewController.swift; path = ../ExtratoTableViewController.swift; sourceTree = "<group>"; };
-		A7F793461B4C2BA9001E98AB /* ExtratoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtratoTableViewCell.swift; path = ../ExtratoTableViewCell.swift; sourceTree = "<group>"; };
 		CD2A16CC1B4B342B00009956 /* arrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowIcon.png; sourceTree = "<group>"; };
 		CD2A16CE1B4B34DB00009956 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		CD2A16D01B4B356B00009956 /* CollectionInicial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionInicial.swift; sourceTree = "<group>"; };
@@ -185,10 +186,13 @@
 		CD2A16D91B4B5A2500009956 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CD3E15A01B4B210900253220 /* Pessoa.swift */,
+				E491CD821B4C449200461890 /* Entrada.swift */,
+				E491CD831B4C449200461890 /* Pessoa.swift */,
 				A7E1E7E41B45C7DC00151D74 /* AppDelegate.swift */,
-				CD3E15A21B4B210900253220 /* Entrada.swift */,
 				A7E1E7E91B45C7DC00151D74 /* ViewController.swift */,
+				A7D7371C1B4DBFD500001FDD /* EscolhaPessoaTableViewCell.swift */,
+				A7D7371D1B4DBFD500001FDD /* ExtratoTableViewCell.swift */,
+				A7D7371E1B4DBFD500001FDD /* ExtratoTableViewController.swift */,
 				CD2A16D01B4B356B00009956 /* CollectionInicial.swift */,
 				CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */,
 				CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */,
@@ -307,11 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD3E15A11B4B210900253220 /* Pessoa.swift in Sources */,
+				A7D737211B4DBFD500001FDD /* ExtratoTableViewController.swift in Sources */,
 				A7E1E7EA1B45C7DC00151D74 /* ViewController.swift in Sources */,
 				CD3E159F1B4B160B00253220 /* DataManager.swift in Sources */,
 				CD2A16D31B4B357F00009956 /* CollectionInicialCell.swift in Sources */,
-				CD3E15A31B4B210900253220 /* Entrada.swift in Sources */,
+				A7D7371B1B4DBE0C00001FDD /* TransacaoViewController.swift in Sources */,
 				A7E1E7E81B45C7DC00151D74 /* CoreData.xcdatamodeld in Sources */,
 				A7F793451B4C2B3D001E98AB /* ExtratoTableViewController.swift in Sources */,
 				A7F793431B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift in Sources */,
@@ -453,6 +457,7 @@
 				INFOPLIST_FILE = CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Debug;
 		};
@@ -463,6 +468,7 @@
 				INFOPLIST_FILE = CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Release;
 		};

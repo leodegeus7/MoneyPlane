@@ -44,6 +44,51 @@ class DataManager {
         
     }
     
+
+    func addEntradaParaPessoa(myPeerID: String, valor: NSNumber, data: NSDate, descricao: String, tipo: String) ->Bool {
+        
+        //Cria entrada
+        let entradaEntidade = NSEntityDescription.entityForName("Entrada", inManagedObjectContext: managedContext)
+        
+        let entrada = Entrada(entity: entradaEntidade!, insertIntoManagedObjectContext: managedContext)
+        
+        entrada.valor = valor
+        entrada.tipo = tipo
+        entrada.descricao = descricao
+        entrada.data = data
+        
+        
+        //Carregar a pessoa com a qual a transaçao foi feita
+        
+        let request = NSFetchRequest(entityName: "Pessoa")
+        request.predicate = NSPredicate(format: "myPeerId BEGINSWITH[cd] %@", myPeerID)
+        
+        
+        var error : NSError?
+        var objetos = managedContext.executeFetchRequest(request, error: &error)
+        
+        
+        let pessoas = objetos as! [Pessoa]
+        
+        
+        //Se a pessoa existe, adiciona a entrada
+        if(pessoas.count>0){
+            let pessoa = pessoas[0]
+            entrada.individuo = pessoa
+            
+            let entradas = pessoa.transacao.mutableCopy() as! NSMutableOrderedSet
+            entradas.addObject(entrada)
+            pessoa.transacao = entradas.copy() as! NSOrderedSet
+            
+            
+        }
+
+        return managedContext.save(&error)
+    }
+
+
+    
+    
     func addTransacao(myPeerID:String, valor:String, hora:String, descricao:String) {
         let pessoaEntidade = NSEntityDescription.entityForName("Pessoa", inManagedObjectContext: managedContext)
         let pessoa = Pessoa(entity: pessoaEntidade!, insertIntoManagedObjectContext: managedContext)

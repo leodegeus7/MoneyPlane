@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Entrada" representedClassName="CoreData.Entrada" syncable="YES">
-        <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="valor" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="individuo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pessoa" inverseName="transacao" inverseEntity="Pessoa" syncable="YES"/>
     </entity>
@@ -10,10 +11,10 @@
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="myPeerID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="transacao" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Entrada" inverseName="individuo" inverseEntity="Entrada" syncable="YES"/>
+        <relationship name="transacao" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Entrada" inverseName="individuo" inverseEntity="Entrada" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Pessoa" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="Entrada" positionX="234" positionY="-18" width="128" height="103"/>
+        <element name="Entrada" positionX="234" positionY="-18" width="128" height="120"/>
+        <element name="Pessoa" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>
