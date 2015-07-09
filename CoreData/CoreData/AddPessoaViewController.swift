@@ -9,7 +9,7 @@
 import UIKit
 
 class AddPessoaViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    var controleFoto = false
 
     @IBOutlet weak var nomePessoa: UITextField!
     @IBOutlet weak var charIconButton: UIButton!
@@ -30,11 +30,25 @@ class AddPessoaViewController: UIViewController,UITextFieldDelegate,UIImagePicke
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addPessoaButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-    }
+
     
+    @IBAction func addPessoaBotao(sender: UIButton) {
+        if !(nomePessoa.text.isEmpty) {
+            if controleFoto {
+        DataManager.instance.addPessoa(nomePessoa.text, myPeerID: "", imagem: "DocumentsFotos\(DataManager.instance.indiceFoto)")
+        navigationController?.popToRootViewControllerAnimated(true)
+        controleFoto = false
+            }
+            else {
+                DataManager.instance.mostrarUIAlert("Atenção", message: "Clique no personagem para adicionar uma foto", viewController: self)
+            
+            }
+        }
+        else {
+            DataManager.instance.mostrarUIAlert("Atenção", message: "Digite um nome para contato", viewController: self)
+            
+        }
+    }
 
     
     @IBAction func trocarImagem(sender: AnyObject) {
@@ -59,7 +73,7 @@ class AddPessoaViewController: UIViewController,UITextFieldDelegate,UIImagePicke
         println("\(path)")
         charIconButton.setImage(image, forState: UIControlState.Normal)
         picker.dismissViewControllerAnimated(true, completion: nil)
-
+        controleFoto = true
     }
     
  

@@ -24,14 +24,14 @@
 		CD2A16D31B4B357F00009956 /* CollectionInicialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */; };
 		CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */; };
 		CD2A16DD1B4B666A00009956 /* profileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16DC1B4B666A00009956 /* profileIcon.png */; };
-		CD2A16E11B4C44FA00009956 /* ColorServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16E01B4C44FA00009956 /* ColorServiceManager.swift */; };
 		CD2A16E31B4C472900009956 /* verde.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16E21B4C472900009956 /* verde.png */; };
 		CD2A16E51B4C472D00009956 /* vermelho.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16E41B4C472D00009956 /* vermelho.png */; };
-		CD2A16E71B4C494E00009956 /* TransacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16E61B4C494E00009956 /* TransacaoViewController.swift */; };
 		CD2A16E91B4C4BD400009956 /* bump.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16E81B4C4BD400009956 /* bump.png */; };
+		CD2A16EB1B4C4E1F00009956 /* TransacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16EA1B4C4E1F00009956 /* TransacaoViewController.swift */; };
 		CD3E159F1B4B160B00253220 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E159E1B4B160B00253220 /* DataManager.swift */; };
 		CD3E15A11B4B210900253220 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E15A01B4B210900253220 /* Pessoa.swift */; };
 		CD3E15A31B4B210900253220 /* Entrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E15A21B4B210900253220 /* Entrada.swift */; };
+		CD86F71D1B4C66B6001EF10C /* ColorServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD86F71C1B4C66B6001EF10C /* ColorServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,14 +66,14 @@
 		CD2A16D21B4B357F00009956 /* CollectionInicialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionInicialCell.swift; sourceTree = "<group>"; };
 		CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPessoaViewController.swift; sourceTree = "<group>"; };
 		CD2A16DC1B4B666A00009956 /* profileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileIcon.png; sourceTree = "<group>"; };
-		CD2A16E01B4C44FA00009956 /* ColorServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorServiceManager.swift; sourceTree = "<group>"; };
 		CD2A16E21B4C472900009956 /* verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verde.png; sourceTree = "<group>"; };
 		CD2A16E41B4C472D00009956 /* vermelho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vermelho.png; sourceTree = "<group>"; };
-		CD2A16E61B4C494E00009956 /* TransacaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransacaoViewController.swift; sourceTree = "<group>"; };
 		CD2A16E81B4C4BD400009956 /* bump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump.png; sourceTree = "<group>"; };
+		CD2A16EA1B4C4E1F00009956 /* TransacaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransacaoViewController.swift; sourceTree = "<group>"; };
 		CD3E159E1B4B160B00253220 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CD3E15A01B4B210900253220 /* Pessoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 		CD3E15A21B4B210900253220 /* Entrada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entrada.swift; sourceTree = "<group>"; };
+		CD86F71C1B4C66B6001EF10C /* ColorServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				CD3E159E1B4B160B00253220 /* DataManager.swift */,
-				CD2A16E01B4C44FA00009956 /* ColorServiceManager.swift */,
+				CD86F71C1B4C66B6001EF10C /* ColorServiceManager.swift */,
 				A7E1E7E61B45C7DC00151D74 /* CoreData.xcdatamodeld */,
 			);
 			name = Model;
@@ -194,8 +194,9 @@
 				CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */,
 				A7F793401B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift */,
 				A7F793421B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift */,
-				A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */,
+				CD2A16EA1B4C4E1F00009956 /* TransacaoViewController.swift */,
 				A7F793461B4C2BA9001E98AB /* ExtratoTableViewCell.swift */,
+				A7F793441B4C2B3D001E98AB /* ExtratoTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -315,10 +316,12 @@
 				A7F793451B4C2B3D001E98AB /* ExtratoTableViewController.swift in Sources */,
 				A7F793431B4C1F2B001E98AB /* EscolhaPessoaTableViewCell.swift in Sources */,
 				A7F793411B4C1F17001E98AB /* EscolhaPessoaTableViewController.swift in Sources */,
+				CD2A16EB1B4C4E1F00009956 /* TransacaoViewController.swift in Sources */,
 				CD2A16D11B4B356B00009956 /* CollectionInicial.swift in Sources */,
 				CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */,
 				A7E1E7E51B45C7DC00151D74 /* AppDelegate.swift in Sources */,
 				A7F793471B4C2BA9001E98AB /* ExtratoTableViewCell.swift in Sources */,
+				CD86F71D1B4C66B6001EF10C /* ColorServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
