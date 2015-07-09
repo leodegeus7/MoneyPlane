@@ -19,6 +19,8 @@ class DataManager {
     var timer:NSTimer!
     var mandarTransacao = false
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+    var myPeerIdTemporario = ""
+    var controleSeMyPeer = false
     
     
     func getPessoa()->[Pessoa]? {

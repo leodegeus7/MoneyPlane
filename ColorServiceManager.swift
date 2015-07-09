@@ -12,17 +12,18 @@ import MultipeerConnectivity
 protocol ColorServiceManagerDelegate { //cria um delegate para avisar a UI dos eventos de conexão
     
     func connectedDevicesChanged(manager : ColorServiceManager, connectedDevices: [String])   //mostra quem conectou na UI
-    func mandarString(manager : ColorServiceManager, colorString: String) //mostra que cor foi recebida do outro dispositivo
+    func colorChanged(manager : ColorServiceManager, colorString: String) //mostra que cor foi recebida do outro dispositivo
     
 }
 
-class ColorServiceManager {
+class ColorServiceManager : NSObject {
     
-    private let ColorServiceType = "shake-it-off"  //nome do servico
+    private let ColorServiceType = "shake-it-out"  //nome do servico
     private let myPeerId = MCPeerID(displayName: UIDevice.currentDevice().name)  //nome do dispositivo
-    private let serviceAdvertiser : MCNearbyServiceAdvertiser //classe que faz o multipeer
-    let serviceBrowser : MCNearbyServiceBrowser //classe que procura outros devices para multipeer
+     let serviceAdvertiser : MCNearbyServiceAdvertiser //classe que faz o multipeer
+    var serviceBrowser : MCNearbyServiceBrowser //classe que procura outros devices para multipeer
     var delegate : ColorServiceManagerDelegate?
+    var collectionView = CollectionInicial()
     
     override init() {
         self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: ColorServiceType)  //inicia a classe serviceAdvertiser
@@ -32,7 +33,7 @@ class ColorServiceManager {
         super.init()
         
         self.serviceAdvertiser.delegate = self //chama um delegate de extensão pra tratar a informaçao
-        self.serviceAdvertiser.startAdvertisingPeer() //inicia a classe
+        //self.serviceAdvertiser.startAdvertisingPeer() //inicia a classe
         
         self.serviceBrowser.delegate = self //chama o delegate do servicebrowser
 //        self.serviceBrowser.startBrowsingForPeers() //e inicia ele para procurar dispositivos
@@ -48,9 +49,9 @@ class ColorServiceManager {
         session?.delegate = self
         return session
         }()
-    
-    func mandarStringFuncao(colorName : String) {  //funcao para mandar a cor
-        NSLog("%@", "string mandada: \(colorName)")
+    var oi = 1
+    func sendColor(colorName : String) {  //funcao para mandar a cor
+        NSLog("%@", "sendColor: \(colorName)")
         
         if session.connectedPeers.count > 0 { //manda para o lazy session acima
             var error : NSError?
@@ -101,14 +102,16 @@ extension MCSessionState {
         switch(self) {
         case .NotConnected: return "NotConnected"  //se nao conectar
         case .Connecting: return "Connecting" //...
-        case .Connected: return "Connected" //...
+        case .Connected:
+            DataManager.instance.mandarTransacao = true
+            return "Connected" //...
         default: return "Unknown"
         }
     }
     
 }
 
-extension ColorServiceManager : MCSessionDelegate {   //delegate do iniciar seção, trata toda a informaçao com o outro dispositivo
+extension ColorServiceManager : MCSessionDelegate {   //del egate do iniciar seção, trata toda a informaçao com o outro dispositivo
     
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) { //joga para a extension MCSessionSate e diz quando mudou de estado
         NSLog("%@", "peer \(peerID) didChangeState: \(state.stringValue())")
@@ -119,7 +122,19 @@ extension ColorServiceManager : MCSessionDelegate {   //delegate do iniciar seç
         NSLog("%@", "didReceiveData: \(data.length) bytes")
         let str = NSString(data: data, encoding: NSUTF8StringEncoding) as! String //cria uma string com o nome do que foi recebido
         NSLog("AQUIII \(str)")
-        self.delegate?.mandarString(self, colorString: str) //manda para a funçao no topo da página que notifica a ui que o outro dispositivo quer mudar a cor
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        let peerUser = "\(peerID)"
+        let userInfo = ["teste":str,"peerID":peerUser]
+        
+        
+        notificationCenter.postNotificationName("receberData", object: nil, userInfo: userInfo)
+        
+        //collectionView.showSimpleAlertWithTitle("recebeu", message: "\(str)", viewController: )
+        
+        DataManager.instance.desligarServico()
+
+        self.delegate?.colorChanged(self, colorString: str) //manda para a funçao no topo da página que notifica a ui que o outro dispositivo quer mudar a cor
     }
     
     func session(session: MCSession!, didReceiveStream stream: NSInputStream!, withName streamName: String!, fromPeer peerID: MCPeerID!) {

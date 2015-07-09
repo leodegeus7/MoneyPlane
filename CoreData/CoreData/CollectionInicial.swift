@@ -22,7 +22,8 @@ let manager = CMMotionManager()
 var controleShake = true
 var pessoaLista = DataManager.instance.getPessoa()
 var pessoaListaArray = [NSDictionary]()
-
+var user = ""
+var str = ""
 
 class CollectionInicial: UICollectionViewController {
 
@@ -83,17 +84,65 @@ class CollectionInicial: UICollectionViewController {
     
     func alerta(notificao:NSNotification) {
         let userInfo = notificao.userInfo! as Dictionary
-        let str = userInfo["teste"] as! String
-        let user = userInfo["peerID"] as! String
-        
-        
-        
-        let alert = UIAlertController(title: "Atencão!", message: "Recebeu R$\(str),00 de \(user)", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-        desligarServico()
+        str = userInfo["teste"] as! String
+        user = userInfo["peerID"] as! String
+        var controleDePeer = false
+        var nomeDaPessoa = ""
+        for var i = 0; i < pessoaListaArray.count ; i++ {
+            var str = pessoaListaArray[i]["myPeerId"] as! String
+            println("\(user)    é igual a   \(str)AQUII")
+            if user == pessoaListaArray[i]["myPeerId"] as! String {
+                nomeDaPessoa = pessoaListaArray[i]["nome"] as! String
+                controleDePeer = true
+                break}
+            
+        }
+            
+        if controleDePeer {
+                println("Achou MYPEERID")
+                let alert = UIAlertController(title: "Atencão!", message: "Recebeu R$\(str),00 de \(nomeDaPessoa)", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: aplicarTransacao))
+                alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                controleDePeer = false
+        }
+        else {
+                let alert = UIAlertController(title: "Atencão!", message: "Recebido de Usuario nao cadastrado: \(user). Deseja Cadastrar?", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Cadastrar",
+                    style: UIAlertActionStyle.Default,
+                    handler: naoAchou))
+                alert.addAction(UIAlertAction(title: "Sair", style: UIAlertActionStyle.Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
 
+        }
+        
+        
+
+        desligarServico()
+        
+        
+        
         println("dados recebidos")
+        
+        
+        
+        
+    }
+    
+    func aplicarTransacao(alert: UIAlertAction!) {
+        //DataManager.instance.addEntradaParaPessoa(DataManager.instance.myPeerIdTemporario, valor: str, data: NSDate., descricao: <#String#>, tipo: <#String#>)
+    
+    
+    }
+    
+    
+    func naoAchou(alert: UIAlertAction!) {
+        println("NAO achou MYPEERID")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewControllerWithIdentifier("AddPessoaViewController") as! UIViewController
+        navigationController?.pushViewController(secondViewController, animated: true)
+        //DataManager.instance.myPeerIdTemporario = user
+        DataManager.instance.controleSeMyPeer = true
     }
 
     override func viewWillDisappear(animated: Bool) {

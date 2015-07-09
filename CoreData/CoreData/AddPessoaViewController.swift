@@ -33,20 +33,44 @@ class AddPessoaViewController: UIViewController,UITextFieldDelegate,UIImagePicke
 
     
     @IBAction func addPessoaBotao(sender: UIButton) {
-        if !(nomePessoa.text.isEmpty) {
-            if controleFoto {
-                DataManager.instance.addPessoa(nomePessoa.text, myPeerID: "", imagem: "Fotos\(DataManager.instance.indiceFoto)")
-                navigationController?.popToRootViewControllerAnimated(true)
-                controleFoto = false
+        var imagem =  DataManager.instance.indiceFoto-1
+        if DataManager.instance.controleSeMyPeer {
+            
+            if !(nomePessoa.text.isEmpty) {
+                if controleFoto {
+                    
+                    DataManager.instance.addPessoa(nomePessoa.text, myPeerID: DataManager.instance.myPeerIdTemporario, imagem: "Fotos\(imagem)")
+                    navigationController?.popToRootViewControllerAnimated(true)
+                    controleFoto = false
+                }
+                else {
+                    DataManager.instance.mostrarUIAlert("Atenção", message: "Clique no personagem para adicionar uma foto", viewController: self)
+                }
             }
+            
             else {
-                DataManager.instance.mostrarUIAlert("Atenção", message: "Clique no personagem para adicionar uma foto", viewController: self)
+                DataManager.instance.mostrarUIAlert("Atenção", message: "Digite um nome para contato", viewController: self)
             
             }
+            DataManager.instance.controleSeMyPeer = false
         }
         else {
-            DataManager.instance.mostrarUIAlert("Atenção", message: "Digite um nome para contato", viewController: self)
-            
+            if !(nomePessoa.text.isEmpty) {
+                if controleFoto {
+                    DataManager.instance.addPessoa(nomePessoa.text, myPeerID: "", imagem: "Fotos\(imagem)")
+                    navigationController?.popToRootViewControllerAnimated(true)
+                    controleFoto = false
+                }
+                else {
+                    DataManager.instance.mostrarUIAlert("Atenção", message: "Clique no personagem para adicionar uma foto", viewController: self)
+                }
+            }
+                
+            else {
+                DataManager.instance.mostrarUIAlert("Atenção", message: "Digite um nome para contato", viewController: self)
+                
+            }
+        
         }
     }
 

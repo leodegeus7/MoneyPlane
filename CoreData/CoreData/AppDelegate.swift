@@ -17,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         DataManager.instance.importarIndiceFotoTXT()
+        
+        var pessoaLista = DataManager.instance.getPessoa()
+        for pessoa in pessoaLista! {
+            println("anTES \(pessoa.nome)")
+            println("anTES id!! \(pessoa.myPeerID)")
+            println("anTES \(pessoa.foto)")
+        }
+        println("ATE AQUI")
+        
+        
+        
         return true
     }
 

@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="1787" y="1606"/>
         </scene>
-        <!--Add Pessoa View Controller-->
+        <!--AddPessoaViewController-->
         <scene sceneID="6jE-aH-0pc">
             <objects>
-                <viewController id="Sef-Te-tjB" customClass="AddPessoaViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPessoaViewController" title="AddPessoaViewController" id="Sef-Te-tjB" customClass="AddPessoaViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k99-ek-z0T"/>
                         <viewControllerLayoutGuide type="bottom" id="98r-YT-4Xb"/>
@@ -243,16 +243,9 @@
                                 <state key="normal" title="Button" image="verde.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEm-NY-MiX">
-                                <rect key="frame" x="200" y="102" width="104" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TEm-NY-MiX" secondAttribute="height" multiplier="3335:4000" id="LU9-kM-VtW"/>
-                                    <constraint firstAttribute="width" constant="104" id="p5i-14-72o"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="vermelho.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="botaoVerdeAction:" destination="vdY-tC-rEX" eventType="touchUpInside" id="0Wc-yj-lgb"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$0,00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-U9-CHX">
                                 <rect key="frame" x="175" y="285" width="250" height="30"/>
@@ -275,7 +268,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMl-Or-O7v">
-                                <rect key="frame" x="213" y="479" width="174" height="129"/>
+                                <rect key="frame" x="213" y="478" width="174" height="129"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iMl-Or-O7v" secondAttribute="height" multiplier="58:43" id="2Ku-Ss-9Yi"/>
                                     <constraint firstAttribute="width" constant="174" id="b1X-XX-YTh"/>
@@ -293,6 +286,19 @@
                                 <state key="normal" image="profileIcon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEm-NY-MiX">
+                                <rect key="frame" x="204" y="102" width="104" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TEm-NY-MiX" secondAttribute="height" multiplier="3335:4000" id="LU9-kM-VtW"/>
+                                    <constraint firstAttribute="width" constant="104" id="p5i-14-72o"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="vermelho.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="botaoVermelhoAction:" destination="vdY-tC-rEX" eventType="touchUpInside" id="I0J-9m-3bh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -312,6 +318,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="botaoVerdeOutlet" destination="U5z-N2-41L" id="hdM-th-XJR"/>
+                        <outlet property="botaoVermelhoOutlet" destination="TEm-NY-MiX" id="dpR-Ab-ocy"/>
                         <outlet property="pessoaImage" destination="HG4-Kv-a9J" id="Pxw-KJ-t0G"/>
                         <outlet property="textFieldTransacao" destination="MGl-U9-CHX" id="BWX-Eo-E3H"/>
                         <segue destination="Y0N-PG-azh" kind="show" id="Dba-Ok-cn6"/>

@@ -122,9 +122,9 @@ extension ColorServiceManager : MCSessionDelegate {   //del egate do iniciar se√
         NSLog("%@", "didReceiveData: \(data.length) bytes")
         let str = NSString(data: data, encoding: NSUTF8StringEncoding) as! String //cria uma string com o nome do que foi recebido
         NSLog("AQUIII \(str)")
-        
+        DataManager.instance.myPeerIdTemporario = "\(peerID.displayName)"
         let notificationCenter = NSNotificationCenter.defaultCenter()
-        let peerUser = "\(peerID)"
+        let peerUser = "\(peerID.displayName)"
         let userInfo = ["teste":str,"peerID":peerUser]
         
         

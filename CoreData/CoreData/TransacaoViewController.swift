@@ -16,6 +16,11 @@ class TransacaoViewController: UIViewController,UITextFieldDelegate {
     var timer:NSTimer!
     var timer2:NSTimer!
     var controle = true
+    var transacaoTipo = ""
+    
+    
+    @IBOutlet weak var botaoVerdeOutlet: UIButton!
+    @IBOutlet weak var botaoVermelhoOutlet: UIButton!
     @IBOutlet weak var pessoaImage: UIButton!
     @IBOutlet weak var textFieldTransacao: UITextField!
     override func viewDidLoad() {
@@ -32,15 +37,18 @@ class TransacaoViewController: UIViewController,UITextFieldDelegate {
             manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) {
                 [weak self] (data: CMDeviceMotion!, error: NSError!) in
                 if data.userAcceleration.x > 1.5 {
-                    
-                    if self!.controle {
-                        if !(self!.textFieldTransacao.text.isEmpty){
-                            DataManager.instance.mandarValorParaOutroIphone(self!.textFieldTransacao.text)
-                            self!.shake()
+                    if self!.transacaoTipo == "" {
+                        if self!.controle {
+                            if !(self!.textFieldTransacao.text.isEmpty){
+                                DataManager.instance.mandarValorParaOutroIphone(self!.textFieldTransacao.text)
+                                self!.shake()
+                            }
+                            else {
+                                DataManager.instance.mostrarUIAlert("Atenção", message: "Digite um valor para transferir", viewController: self!)
+                            }
                         }
                         else {
-                            DataManager.instance.mostrarUIAlert("Atenção", message: "Digite um valor para transferir", viewController: self!)
-                        
+                        DataManager.instance.mostrarUIAlert("Atenção", message: "Clique nas flechas para escolher o tipo de transacao", viewController: self!)
                         
                         }
                     }
@@ -69,6 +77,18 @@ class TransacaoViewController: UIViewController,UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @IBAction func botaoVerdeAction(sender: AnyObject) {
+        transacaoTipo = "entrada"
+        botaoVermelhoOutlet.enabled = false
+    }
+    
+    
+    @IBAction func botaoVermelhoAction(sender: AnyObject) {
+        transacaoTipo = "saida"
+        
+    }
+    
     
     func shake() {
         multiPeer.serviceAdvertiser.startAdvertisingPeer()
