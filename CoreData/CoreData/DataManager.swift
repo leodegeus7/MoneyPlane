@@ -12,6 +12,8 @@ import CoreData
 class DataManager {
     
     static let instance: DataManager = DataManager()
+    var arrayPessoasConvertido = [NSDictionary]()
+
 
     var indiceFoto = 0
     var multiPeer = ColorServiceManager()
@@ -253,6 +255,19 @@ class DataManager {
 
     }
     
+    func atualizarArrayPessoas() {
+        var arrayPessoas = DataManager.instance.getPessoa()
+        for pessoa in arrayPessoas! {
+            let nome = pessoa.nome
+            let myPeerID = pessoa.myPeerID
+            let foto = pessoa.foto
+            let transacao = pessoa.transacao
+            let dicionario = ["nome":nome,"myPeerID":myPeerID,"foto":foto,"transacao":transacao]
+            
+            arrayPessoasConvertido.append(dicionario)
+            
+        }
+    }
 
     //func alterarNomePessoa(name:String) ->Bool {
     ////Carregar a pessoa com a qual a transaçao foi feita

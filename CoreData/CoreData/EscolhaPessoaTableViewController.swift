@@ -8,11 +8,15 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
-
+    let verdeEscuro = UIColor (red: 10/255.0, green: 111/255.0, blue: 48/255.0, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,9 +24,12 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
 
@@ -35,33 +42,23 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        var numeroDeCells = 5
+    
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
     
-        return numeroDeCells
+        return DataManager.instance.arrayPessoasConvertido.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! EscolhaPessoaTableViewCell
-
-        switch indexPath.row {
-        case 0:
-            cell.nomePessoa.text = "Leonardo de Geus"
-            cell.saldoPessoa.text = "-15,30"
-        case 1:
-            cell.nomePessoa.text = "Leonardo Piovezan"
-            cell.saldoPessoa.text = "1,30"
-        break
-        default:
-            cell.nomePessoa.text = "Default"
-            cell.saldoPessoa.text = "Nil"
-        }
+        
+        
+        cell.nomePessoa.text = DataManager.instance.arrayPessoasConvertido[indexPath.row]["nome"] as? String
+        cell.saldoPessoa.text = "0,00"
         
         cell.imagemPessoa.image = UIImage (named: "profileIcon")
-        cell.imagemPessoa?.layer.borderWidth = 2.0
+        cell.imagemPessoa?.layer.borderWidth = 3.0
         cell.imagemPessoa?.layer.masksToBounds = false
         cell.imagemPessoa?.layer.cornerRadius = 30
         cell.imagemPessoa?.clipsToBounds = true
@@ -72,9 +69,10 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
             cell.imagemPessoa?.layer.borderColor = UIColor.redColor().CGColor
         
         } else {
-            cell.imagemPessoa?.layer.borderColor = UIColor.blueColor().CGColor
+            cell.imagemPessoa?.layer.borderColor = verdeEscuro.CGColor
+            
         }
-        
+    
         return cell
     }
 

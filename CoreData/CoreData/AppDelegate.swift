@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         DataManager.instance.importarIndiceFotoTXT()
+        DataManager.instance.atualizarArrayPessoas()
         
         var pessoaLista = DataManager.instance.getPessoa()
         for pessoa in pessoaLista! {
