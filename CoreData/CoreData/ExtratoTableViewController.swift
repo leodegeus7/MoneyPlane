@@ -44,6 +44,15 @@ class ExtratoTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell1 = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! ExtratoTableViewCell
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if indexPath.row == (numerodeCells-1) {
             cell1.valorTransacao.text = "-35,00"
             cell1.dataTransacao.text = "Saldo"
@@ -57,8 +66,20 @@ class ExtratoTableViewController: UITableViewController {
             cell1.valorTransacao.text = "-5,00"
         }
         return cell1
-        // Configure the cell...
 
+
+    }
+
+
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            //codigo para deletar transacao
+        }
     }
 
 

@@ -23,6 +23,9 @@ class DataManager {
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     var myPeerIdTemporario = ""
     var controleSeMyPeer = false
+    var valorTemporario = ""
+    var saldoDosUsuarios = [Float]()
+    
     
     
     func getPessoa()->[Pessoa]? {
@@ -49,7 +52,7 @@ class DataManager {
     }
     
 
-    func addEntradaParaPessoa(myPeerID: String, valor: NSNumber, data: NSDate, descricao: String, tipo: String) ->Bool {
+    func addEntradaParaPessoa(pessoa: String, valor: NSNumber, data: NSDate, descricao: String, tipo: String) ->Bool {
         
         //Cria entrada
         let entradaEntidade = NSEntityDescription.entityForName("Entrada", inManagedObjectContext: managedContext)
@@ -65,7 +68,7 @@ class DataManager {
         //Carregar a pessoa com a qual a transaçao foi feita
         
         let request = NSFetchRequest(entityName: "Pessoa")
-        request.predicate = NSPredicate(format: "myPeerId BEGINSWITH[cd] %@", myPeerID)
+        request.predicate = NSPredicate(format: "nome BEGINSWITH[cd] %@", pessoa)
         
         
         var error : NSError?
@@ -267,6 +270,16 @@ class DataManager {
             arrayPessoasConvertido.append(dicionario)
             
         }
+    }
+    
+    func calcularSaldoDosUsuario() {
+        //calcular saldo dos usuarios para apresentar na tela inicial
+    
+    }
+    
+    func deletarTransacaoDeUsuario() {
+        //deletar do coredada a dada transacao do usuario
+    
     }
 
     //func alterarNomePessoa(name:String) ->Bool {

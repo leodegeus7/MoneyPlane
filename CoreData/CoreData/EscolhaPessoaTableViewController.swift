@@ -49,6 +49,14 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
         return DataManager.instance.arrayPessoasConvertido.count
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let date = NSDate()
+        var valor = Float((DataManager.instance.valorTemporario as NSString).floatValue)
+        let usuario = DataManager.instance.arrayPessoasConvertido[indexPath.row]["nome"] as? String
+
+        DataManager.instance.addEntradaParaPessoa(usuario!, valor: valor, data: date, descricao: "", tipo: "")
+    }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! EscolhaPessoaTableViewCell

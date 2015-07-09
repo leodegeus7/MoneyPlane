@@ -24,6 +24,7 @@ var pessoaLista = DataManager.instance.getPessoa()
 var pessoaListaArray = [NSDictionary]()
 var user = ""
 var str = ""
+var userNome = ""
 
 class CollectionInicial: UICollectionViewController {
 
@@ -93,6 +94,7 @@ class CollectionInicial: UICollectionViewController {
             println("\(user)    é igual a   \(str)AQUII")
             if user == pessoaListaArray[i]["myPeerId"] as! String {
                 nomeDaPessoa = pessoaListaArray[i]["nome"] as! String
+                userNome = nomeDaPessoa
                 controleDePeer = true
                 break}
             
@@ -130,8 +132,10 @@ class CollectionInicial: UICollectionViewController {
     }
     
     func aplicarTransacao(alert: UIAlertAction!) {
-        //DataManager.instance.addEntradaParaPessoa(DataManager.instance.myPeerIdTemporario, valor: str, data: NSDate., descricao: <#String#>, tipo: <#String#>)
-    
+        let date = NSDate()
+        var valor = Float((str as NSString).floatValue)
+        
+        DataManager.instance.addEntradaParaPessoa(userNome, valor: valor, data: date, descricao: "", tipo: "")
     
     }
     
@@ -194,6 +198,7 @@ extension CollectionInicial : UICollectionViewDataSource {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 
         
+        
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionInicialCell
         
  
@@ -213,8 +218,13 @@ extension CollectionInicial : UICollectionViewDataSource {
                     options: UIViewAnimationOptions.TransitionFlipFromRight
                         | UIViewAnimationOptions.ShowHideTransitionViews,
                     completion: nil)
-            }
+        }
         controle[indexPath.row] = !controle[indexPath.row]
+        if controle[indexPath.row] {
+            let secondViewController = storyboard!.instantiateViewControllerWithIdentifier("extratoPessoa") as! UIViewController
+            navigationController?.pushViewController(secondViewController, animated: true)
+        
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
