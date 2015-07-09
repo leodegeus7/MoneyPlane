@@ -289,6 +289,9 @@
                                 <state key="normal" image="profileIcon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Y0N-PG-azh" kind="show" id="zey-m4-YeH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEm-NY-MiX">
                                 <rect key="frame" x="204" y="102" width="104" height="125"/>
@@ -325,7 +328,6 @@
                         <outlet property="botaoVermelhoOutlet" destination="TEm-NY-MiX" id="dpR-Ab-ocy"/>
                         <outlet property="pessoaImage" destination="HG4-Kv-a9J" id="Pxw-KJ-t0G"/>
                         <outlet property="textFieldTransacao" destination="MGl-U9-CHX" id="BWX-Eo-E3H"/>
-                        <segue destination="Y0N-PG-azh" kind="show" id="Dba-Ok-cn6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucr-Ux-5qS" userLabel="First Responder" sceneMemberID="firstResponder"/>
