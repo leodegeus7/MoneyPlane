@@ -24,6 +24,7 @@ class DataManager {
     var myPeerIdTemporario = ""
     var controleSeMyPeer = false
     var valorTemporario = ""
+    var transacaoTemporario = ""
     var saldoDosUsuarios = [Float]()
     
     

@@ -26,10 +26,10 @@
 		CD2A16DB1B4B632A00009956 /* AddPessoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */; };
 		CD2A16DD1B4B666A00009956 /* profileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16DC1B4B666A00009956 /* profileIcon.png */; };
 		CD2A16E31B4C472900009956 /* verde.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16E21B4C472900009956 /* verde.png */; };
-		CD2A16E51B4C472D00009956 /* vermelho.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16E41B4C472D00009956 /* vermelho.png */; };
 		CD2A16E91B4C4BD400009956 /* bump.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2A16E81B4C4BD400009956 /* bump.png */; };
 		CD3E159F1B4B160B00253220 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E159E1B4B160B00253220 /* DataManager.swift */; };
 		CD9178511B4EBA8E000986C5 /* ColorServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9178501B4EBA8E000986C5 /* ColorServiceManager.swift */; };
+		CDF0FD9A1B4F18D2001909DE /* vermelho.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF0FD991B4F18D2001909DE /* vermelho.png */; };
 		E491CD841B4C449200461890 /* Entrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491CD821B4C449200461890 /* Entrada.swift */; };
 		E491CD851B4C449200461890 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491CD831B4C449200461890 /* Pessoa.swift */; };
 /* End PBXBuildFile section */
@@ -68,10 +68,10 @@
 		CD2A16DA1B4B632A00009956 /* AddPessoaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPessoaViewController.swift; sourceTree = "<group>"; };
 		CD2A16DC1B4B666A00009956 /* profileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileIcon.png; sourceTree = "<group>"; };
 		CD2A16E21B4C472900009956 /* verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verde.png; sourceTree = "<group>"; };
-		CD2A16E41B4C472D00009956 /* vermelho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vermelho.png; sourceTree = "<group>"; };
 		CD2A16E81B4C4BD400009956 /* bump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump.png; sourceTree = "<group>"; };
 		CD3E159E1B4B160B00253220 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CD9178501B4EBA8E000986C5 /* ColorServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorServiceManager.swift; sourceTree = "<group>"; };
+		CDF0FD991B4F18D2001909DE /* vermelho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vermelho.png; sourceTree = "<group>"; };
 		E491CD821B4C449200461890 /* Entrada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entrada.swift; sourceTree = "<group>"; };
 		E491CD831B4C449200461890 /* Pessoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,7 +177,7 @@
 				CD2A16E81B4C4BD400009956 /* bump.png */,
 				CD2A16CE1B4B34DB00009956 /* 123.png */,
 				CD2A16E21B4C472900009956 /* verde.png */,
-				CD2A16E41B4C472D00009956 /* vermelho.png */,
+				CDF0FD991B4F18D2001909DE /* vermelho.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -282,8 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2A16CD1B4B342B00009956 /* arrowIcon.png in Resources */,
-				CD2A16E51B4C472D00009956 /* vermelho.png in Resources */,
 				CD2A16E91B4C4BD400009956 /* bump.png in Resources */,
+				CDF0FD9A1B4F18D2001909DE /* vermelho.png in Resources */,
 				A7E1E7ED1B45C7DC00151D74 /* Main.storyboard in Resources */,
 				A7E1E7F21B45C7DC00151D74 /* LaunchScreen.xib in Resources */,
 				A7E1E7EF1B45C7DC00151D74 /* Images.xcassets in Resources */,

@@ -250,19 +250,19 @@
                                     <action selector="botaoVerdeAction:" destination="vdY-tC-rEX" eventType="touchUpInside" id="0Wc-yj-lgb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$0,00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-U9-CHX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$0,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-U9-CHX">
                                 <rect key="frame" x="175" y="285" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="LeM-Rz-D7V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="vdY-tC-rEX" id="Oz0-PN-R9T"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lw8-ry-33D">
-                                <rect key="frame" x="292" y="444" width="16" height="21"/>
+                                <rect key="frame" x="292" y="444" width="16" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="H6Q-PF-9bk"/>
                                 </constraints>
@@ -306,15 +306,21 @@
                                     <action selector="botaoVermelhoAction:" destination="vdY-tC-rEX" eventType="touchUpInside" id="I0J-9m-3bh"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="v4K-NG-ccx">
+                                <rect key="frame" x="282" y="240" width="37" height="37"/>
+                                <color key="color" red="0.01176470588" green="0.043137254899999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MGl-U9-CHX" firstAttribute="top" secondItem="U5z-N2-41L" secondAttribute="bottom" constant="58" id="47A-qW-fdn"/>
                             <constraint firstItem="U5z-N2-41L" firstAttribute="bottom" secondItem="TEm-NY-MiX" secondAttribute="bottom" id="9fr-1y-Rpq"/>
+                            <constraint firstAttribute="centerY" secondItem="v4K-NG-ccx" secondAttribute="centerY" constant="41.5" id="Big-rG-SlL"/>
                             <constraint firstItem="U5z-N2-41L" firstAttribute="leading" secondItem="0Lz-vd-ELy" secondAttribute="leadingMargin" constant="40" id="NNZ-yf-RSg"/>
                             <constraint firstItem="U5z-N2-41L" firstAttribute="top" secondItem="gfN-Hu-GZF" secondAttribute="bottom" constant="38" id="at6-9Z-vMf"/>
                             <constraint firstItem="Lw8-ry-33D" firstAttribute="top" secondItem="HG4-Kv-a9J" secondAttribute="bottom" constant="28" id="dSA-Y8-ObI"/>
                             <constraint firstItem="TEm-NY-MiX" firstAttribute="leading" secondItem="U5z-N2-41L" secondAttribute="trailing" constant="40" id="f8a-5w-ZSh"/>
+                            <constraint firstAttribute="centerX" secondItem="v4K-NG-ccx" secondAttribute="centerX" constant="-0.5" id="fIE-Aa-1dA"/>
                             <constraint firstAttribute="centerX" secondItem="MGl-U9-CHX" secondAttribute="centerX" id="iQp-Hf-EsK"/>
                             <constraint firstItem="iMl-Or-O7v" firstAttribute="top" secondItem="Lw8-ry-33D" secondAttribute="bottom" constant="14" id="kbN-Ez-Tuz"/>
                             <constraint firstItem="iMl-Or-O7v" firstAttribute="centerX" secondItem="Lw8-ry-33D" secondAttribute="centerX" id="lLf-Po-fXV"/>
@@ -326,6 +332,7 @@
                     <connections>
                         <outlet property="botaoVerdeOutlet" destination="U5z-N2-41L" id="hdM-th-XJR"/>
                         <outlet property="botaoVermelhoOutlet" destination="TEm-NY-MiX" id="dpR-Ab-ocy"/>
+                        <outlet property="loader" destination="v4K-NG-ccx" id="Ujw-3T-7e1"/>
                         <outlet property="pessoaImage" destination="HG4-Kv-a9J" id="Pxw-KJ-t0G"/>
                         <outlet property="textFieldTransacao" destination="MGl-U9-CHX" id="BWX-Eo-E3H"/>
                     </connections>
@@ -398,10 +405,13 @@
                     <navigationItem key="navigationItem" id="R5t-wj-lgO">
                         <barButtonItem key="rightBarButtonItem" title="+" style="done" systemItem="add" id="uyo-hE-slG"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="OWd-Kz-6dc" kind="show" id="8DQ-u6-xwV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5r-hB-5aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3525" y="861"/>
+            <point key="canvasLocation" x="2690" y="1753"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lZA-RL-l5p">
@@ -429,4 +439,7 @@
         <image name="verde.png" width="3335" height="4343"/>
         <image name="vermelho.png" width="3342" height="4335"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8DQ-u6-xwV"/>
+    </inferredMetricsTieBreakers>
 </document>

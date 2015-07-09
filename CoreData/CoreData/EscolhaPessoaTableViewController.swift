@@ -54,7 +54,14 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
         var valor = Float((DataManager.instance.valorTemporario as NSString).floatValue)
         let usuario = DataManager.instance.arrayPessoasConvertido[indexPath.row]["nome"] as? String
 
-        DataManager.instance.addEntradaParaPessoa(usuario!, valor: valor, data: date, descricao: "", tipo: "")
+        DataManager.instance.addEntradaParaPessoa(usuario!, valor: valor, data: date, descricao: "", tipo: DataManager.instance.transacaoTemporario)
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewControllerWithIdentifier("CollectionViewController") as! UIViewController
+        navigationController?.pushViewController(secondViewController, animated: true)
+        
+        
     }
     
     
@@ -65,7 +72,10 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
         cell.nomePessoa.text = DataManager.instance.arrayPessoasConvertido[indexPath.row]["nome"] as? String
         cell.saldoPessoa.text = "0,00"
         
-        cell.imagemPessoa.image = UIImage (named: "profileIcon")
+        
+        let caminhoImagem = DataManager.instance.acharImagemUser(pessoaListaArray[indexPath.row]["foto"] as! String)
+        cell.imagemPessoa.image = UIImage(contentsOfFile: caminhoImagem)
+
         cell.imagemPessoa?.layer.borderWidth = 3.0
         cell.imagemPessoa?.layer.masksToBounds = false
         cell.imagemPessoa?.layer.cornerRadius = 30
@@ -84,9 +94,6 @@ class EscolhaPessoaTableViewController: UITableViewController, UITableViewDataSo
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
-    }
 
     
     
