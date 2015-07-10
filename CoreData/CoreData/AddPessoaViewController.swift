@@ -92,7 +92,7 @@ class AddPessoaViewController: UIViewController,UITextFieldDelegate,UIImagePicke
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var image = info[UIImagePickerControllerEditedImage] as! UIImage
         var path = DataManager.instance.salvarImagem(image)
         println("\(path)")
         charIconButton.setImage(image, forState: UIControlState.Normal)
