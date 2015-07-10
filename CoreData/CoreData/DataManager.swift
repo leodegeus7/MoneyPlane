@@ -13,8 +13,10 @@ class DataManager {
     
     static let instance: DataManager = DataManager()
     var arrayPessoasConvertido = [NSDictionary]()
-    var arrayTransacoes = [[NSDictionary]]()
+    var arrayTransacoes = [[String: [(NSDictionary)]]]()
 
+    
+    var transacoes = [NSDictionary]()
 
     var indiceFoto = 0
     var multiPeer = ColorServiceManager()
@@ -27,9 +29,15 @@ class DataManager {
     var valorTemporario = ""
     var transacaoTemporario = ""
     var saldoDosUsuarios = [Float]()
-    var rowSelecionada = 0
+    var nomeSelecionado = "" 
     
     
+    func mostrarInfo() {
+        var array = arrayTransacoes
+        println(array)
+        
+        
+    }
     
     
     func getPessoa()->[Pessoa]? {
@@ -334,9 +342,11 @@ class DataManager {
         
     }
     
+  
+
     
     func atualizarArrayTransacao() {
-        
+
         
         var arrayDePessoasCoreData = DataManager.instance.getPessoa()
         var pessoaEscolhidaCoreData = arrayDePessoasCoreData?.first
@@ -358,10 +368,11 @@ class DataManager {
             let dicionarioPessoa = ["\(nomePessoa)":transacoesPessoa]
 
             
-            arrayTransacoes.append(transacoesPessoa)
+            arrayTransacoes.append(dicionarioPessoa)
             
         }
-        
+        println("\(arrayTransacoes)")
+
         
 //        transacoesPessoasCoreData.data =
 //        
