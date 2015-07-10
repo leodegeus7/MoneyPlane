@@ -46,7 +46,7 @@
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VC8-pq-Rco" userLabel="ViewUsuario">
                                                     <rect key="frame" x="0.0" y="0.0" width="115" height="112"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-vT-WqC">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-vT-WqC">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="112"/>
                                                             <color key="backgroundColor" red="0.49209126349999999" green="0.86000001429999995" blue="0.56752301829999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
@@ -54,10 +54,22 @@
                                                                 <constraint firstAttribute="height" constant="112" id="Sb5-wm-Eqk"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzo-XB-4Iz">
+                                                            <rect key="frame" x="22" y="83" width="70" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="9Ep-c3-RBw"/>
+                                                                <constraint firstAttribute="width" constant="70" id="eio-37-mMq"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="Vzo-XB-4Iz" firstAttribute="top" secondItem="SIF-vT-WqC" secondAttribute="bottom" constant="-29" id="26l-Aj-Xgr"/>
                                                         <constraint firstAttribute="width" secondItem="SIF-vT-WqC" secondAttribute="width" id="Gl7-OT-kaF"/>
+                                                        <constraint firstItem="SIF-vT-WqC" firstAttribute="leading" secondItem="Vzo-XB-4Iz" secondAttribute="trailing" constant="-92" id="QzA-KH-aGd"/>
                                                         <constraint firstAttribute="height" secondItem="SIF-vT-WqC" secondAttribute="height" id="hix-mH-Roe"/>
                                                     </constraints>
                                                 </view>
@@ -78,6 +90,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imagePessoa" destination="SIF-vT-WqC" id="bpl-cu-3DA"/>
+                                    <outlet property="nomeLabel" destination="Vzo-XB-4Iz" id="LUt-uK-k9e"/>
                                     <outlet property="viewSaldo" destination="oxb-eV-Xn8" id="DFz-jI-vPR"/>
                                     <outlet property="viewUsuario" destination="VC8-pq-Rco" id="qvC-0x-7Tc"/>
                                 </connections>

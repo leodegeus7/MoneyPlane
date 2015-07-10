@@ -200,7 +200,8 @@ extension CollectionInicial : UICollectionViewDataSource {
         let caminhoImagem = DataManager.instance.acharImagemUser(pessoaListaArray[indexPath.row]["foto"] as! String)
         println(caminhoImagem)
         cell.imagePessoa.image = UIImage(contentsOfFile: caminhoImagem)
-        
+        cell.nomeLabel.text = pessoaListaArray[indexPath.row]["nome"] as? String
+
         return cell
     }
     

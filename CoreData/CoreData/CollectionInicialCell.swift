@@ -19,5 +19,6 @@ class CollectionInicialCell: UICollectionViewCell {
 
     @IBOutlet weak var teste: UILabel!
 
+    @IBOutlet weak var nomeLabel: UILabel!
     
 }
