@@ -36,12 +36,13 @@ class ExtratoTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        DataManager.instance.atualizarArrayTransacao()
+        var teste = DataManager.instance.arrayTransacoes
+        print(teste.count)
+
+         return DataManager.instance.arrayTransacoes[0]["\(DataManager.instance.nomeSelecionado)"]!.count
         
-    
-        //var array = DataManager.instance.arrayTransacoes[0]
         
-        
-        return 5 
     }
     
 

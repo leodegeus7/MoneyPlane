@@ -13,8 +13,10 @@ class DataManager {
     
     static let instance: DataManager = DataManager()
     var arrayPessoasConvertido = [NSDictionary]()
-    var arrayTransacoes = [[NSDictionary]]()
+    var arrayTransacoes = [[String: [(NSDictionary)]]]()
 
+    
+    var transacoes = [NSDictionary]()
 
     var indiceFoto = 0
     var multiPeer = ColorServiceManager()
@@ -27,7 +29,7 @@ class DataManager {
     var valorTemporario = ""
     var transacaoTemporario = ""
     var saldoDosUsuarios = [Float]()
-    var rowSelecionada = 0
+    var nomeSelecionado = "" 
     
     var transacoesdaPessoaSelecionada = [NSDictionary]()
     
@@ -334,6 +336,8 @@ class DataManager {
         
     }
     
+  
+
     
 //    func atualizarArrayTransacao() {
 //        

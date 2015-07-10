@@ -36,11 +36,8 @@ class CollectionInicial: UICollectionViewController {
 
         
         loadAssets()
-        
-        var array = DataManager.instance.arrayTransacoes
-        println("\(DataManager.instance.arrayTransacoes)")
-        
 
+        
         
     }
     
@@ -87,7 +84,8 @@ class CollectionInicial: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        DataManager.instance.mostrarInfo()
+
         
         pessoaListaArray.removeAll(keepCapacity: false)
         pessoaLista?.removeAll(keepCapacity: false)
@@ -220,10 +218,11 @@ extension CollectionInicial : UICollectionViewDataSource {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 
         
-        DataManager.instance.rowSelecionada = indexPath.row
         
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionInicialCell
         
+        DataManager.instance.nomeSelecionado = cell.nomeLabel.text!
+
  
         if (controle[indexPath.row]) {
 
