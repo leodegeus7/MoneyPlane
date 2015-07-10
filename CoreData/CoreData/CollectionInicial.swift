@@ -84,6 +84,12 @@ class CollectionInicial: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        
+        pessoaListaArray.removeAll(keepCapacity: false)
+        pessoaLista?.removeAll(keepCapacity: false)
+        
+        
         pessoaLista = DataManager.instance.getPessoa()
         loadAssets()
         
