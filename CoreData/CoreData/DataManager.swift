@@ -29,7 +29,7 @@ class DataManager {
     var saldoDosUsuarios = [Float]()
     var rowSelecionada = 0
     
-    
+    var transacoesdaPessoaSelecionada = [NSDictionary]()
     
     
     func getPessoa()->[Pessoa]? {
@@ -335,51 +335,88 @@ class DataManager {
     }
     
     
-    func atualizarArrayTransacao() {
+//    func atualizarArrayTransacao() {
+//        
+//        
+//        var arrayDePessoasCoreData = DataManager.instance.getPessoa()
+//        var pessoaEscolhidaCoreData = arrayDePessoasCoreData?.first
+//        
+//        for pessoa in arrayDePessoasCoreData! {
+//            var nomePessoa = pessoa.nome
+//            var transacoesPessoa = [NSDictionary]()
+//            for var i=0 ; i < pessoa.transacao.count ; i++ {
+//                let entrada: Entrada = pessoa.transacao.array[i] as! Entrada
+//                let valor = entrada.valor
+//                let data = entrada.data
+//                let descricao = entrada.descricao
+//                let tipo = entrada.tipo
+//                let dicionarioEntradas = ["valor":valor,"data":data,"descricao":descricao,"tipo":tipo]
+//                transacoesPessoa.append(dicionarioEntradas)
+//                
+//            }
+//            
+//            let dicionarioPessoa = ["\(nomePessoa)":transacoesPessoa]
+//
+//            
+//            arrayTransacoes.append(transacoesPessoa)
+//            
+//        }
+//        
+//        
+////        transacoesPessoasCoreData.data =
+////        
+////        var arrayDePessoas = arrayPessoasConvertido
+////        var pessoaEscolhida = arrayDePessoas[pessoa]
+////        var transacoesPessoas = pessoaEscolhida["transacao"] as! NSArray
+////        for var i = 0 ;i < transacoesPessoas.count ; i++ {
+////            var data =
+////        
+////
+//    
+//        
+//   // println("\(array)")
+//    
+//        
+//}
+    
+    
+    
+    func getEntradasFromPessoa(nome: String){
+        transacoesdaPessoaSelecionada.removeAll(keepCapacity: false)
+        
+        let request = NSFetchRequest(entityName: "Pessoa")
+        request.predicate = NSPredicate(format: "nome BEGINSWITH[cd] %@", nome)
         
         
-        var arrayDePessoasCoreData = DataManager.instance.getPessoa()
-        var pessoaEscolhidaCoreData = arrayDePessoasCoreData?.first
+        var error : NSError?
+        var objetos = managedContext.executeFetchRequest(request, error: &error)
         
-        for pessoa in arrayDePessoasCoreData! {
-            var nomePessoa = pessoa.nome
-            var transacoesPessoa = [NSDictionary]()
-            for var i=0 ; i < pessoa.transacao.count ; i++ {
-                let entrada: Entrada = pessoa.transacao.array[i] as! Entrada
-                let valor = entrada.valor
-                let data = entrada.data
-                let descricao = entrada.descricao
-                let tipo = entrada.tipo
-                let dicionarioEntradas = ["valor":valor,"data":data,"descricao":descricao,"tipo":tipo]
-                transacoesPessoa.append(dicionarioEntradas)
+        
+        let pessoas = objetos as! [Pessoa]
+        
+        
+        
+        if(pessoas.count>0){
+            let pessoa = pessoas[0]
+            
+            let entradas = pessoa.transacao.mutableCopy() as! NSMutableOrderedSet
+            
+            for entrada in entradas {
+                println("valor entrada \((entrada as! Entrada).valor)")
+                var valor = (entrada as! Entrada).valor
+                var data = (entrada as! Entrada).data
+                var descricao = (entrada as! Entrada).descricao
+                var tipo = (entrada as! Entrada).tipo
                 
-            }
-            
-            let dicionarioPessoa = ["\(nomePessoa)":transacoesPessoa]
+                var dicionarioEntradas = ["valor":valor,"data":data,"descricao":descricao,"tipo":tipo]
+                transacoesdaPessoaSelecionada.append(dicionarioEntradas)
 
-            
-            arrayTransacoes.append(transacoesPessoa)
-            
+            }
         }
         
-        
-//        transacoesPessoasCoreData.data =
-//        
-//        var arrayDePessoas = arrayPessoasConvertido
-//        var pessoaEscolhida = arrayDePessoas[pessoa]
-//        var transacoesPessoas = pessoaEscolhida["transacao"] as! NSArray
-//        for var i = 0 ;i < transacoesPessoas.count ; i++ {
-//            var data =
-//        
-//
+        print(transacoesdaPessoaSelecionada)
+    }
     
-        
-   // println("\(array)")
-        
-    
-
-        
-}
 //
 
     
