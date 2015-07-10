@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D1231D5F-30EB-4C79-B32C-E56CE1449B06</string>
+	<string>0C946DEE-A4AB-4C9D-A033-A4372E09A36D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>CoreData</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>4C46680468B6E3F7626095D36143A9CF0B42D9AD</key>
 		<string>https://bitbucket.org/coredata/coredata.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CoreData/CoreData.xcodeproj</string>
+	<string>CoreData/CoreData.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4C46680468B6E3F7626095D36143A9CF0B42D9AD</key>

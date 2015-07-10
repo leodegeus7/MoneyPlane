@@ -96,16 +96,16 @@ class DataManager {
 
 
     
-    
-    func addTransacao(myPeerID:String, valor:String, hora:String, descricao:String) {
-        let pessoaEntidade = NSEntityDescription.entityForName("Pessoa", inManagedObjectContext: managedContext)
-        let pessoa = Pessoa(entity: pessoaEntidade!, insertIntoManagedObjectContext: managedContext)
-        let entradaEntidade = NSEntityDescription.entityForName("Entrada", inManagedObjectContext: managedContext)
-        let entrada = Entrada(entity: entradaEntidade!, insertIntoManagedObjectContext: managedContext)
-        
-        var arrayTransacao = NSMutableOrderedSet()
-        
-    }
+//    
+//    func addTransacao(myPeerID:String, valor:String, hora:String, descricao:String) {
+//        let pessoaEntidade = NSEntityDescription.entityForName("Pessoa", inManagedObjectContext: managedContext)
+//        let pessoa = Pessoa(entity: pessoaEntidade!, insertIntoManagedObjectContext: managedContext)
+//        let entradaEntidade = NSEntityDescription.entityForName("Entrada", inManagedObjectContext: managedContext)
+//        let entrada = Entrada(entity: entradaEntidade!, insertIntoManagedObjectContext: managedContext)
+//        
+//        var arrayTransacao = NSMutableOrderedSet()
+//        
+//    }
     
     func removePessoa(pessoa: Pessoa)->Bool{
         managedContext.deleteObject(pessoa)
@@ -273,14 +273,62 @@ class DataManager {
         }
     }
     
-    func calcularSaldoDosUsuario() {
+    func calcularSaldoDoUsuario(nome: String) -> Float {
         //calcular saldo dos usuarios para apresentar na tela inicial
     
+        
+        let request = NSFetchRequest(entityName: "Pessoa")
+        request.predicate = NSPredicate(format: "nome BEGINSWITH[cd] %@", nome)
+        
+        
+        var error : NSError?
+        var objetos = managedContext.executeFetchRequest(request, error: &error)
+        
+        
+        let pessoas = objetos as! [Pessoa]
+        var saldo:Float = 0.0
+        if(pessoas.count>0){
+            let pessoa = pessoas[0]
+            
+            let entradas = pessoa.transacao.mutableCopy() as! NSMutableOrderedSet
+            
+            for entrada in entradas {
+                saldo += (entrada as! Entrada).valor.floatValue
+            }
+        }
+        
+        return saldo
     }
     
-    func deletarTransacaoDeUsuario() {
+    func deletarTransacaoDeUsuario(nome: String, indexTransacao: Int) -> Bool {
         //deletar do coredada a dada transacao do usuario
-    
+
+        
+        //Carregar a pessoa com a qual a transaçao foi feita
+        
+        let request = NSFetchRequest(entityName: "Pessoa")
+        request.predicate = NSPredicate(format: "nome BEGINSWITH[cd] %@", nome)
+        
+        
+        var error : NSError?
+        var objetos = managedContext.executeFetchRequest(request, error: &error)
+        
+        
+        let pessoas = objetos as! [Pessoa]
+        
+        if(pessoas.count>0){
+            let pessoa = pessoas[0]
+            
+            let entradas = pessoa.transacao.mutableCopy() as! NSMutableOrderedSet
+            entradas.removeObjectAtIndex(indexTransacao)
+            pessoa.transacao = entradas.copy() as! NSOrderedSet
+            
+            
+        }
+        
+        return managedContext.save(&error)
+
+        
     }
 
     //func alterarNomePessoa(name:String) ->Bool {
