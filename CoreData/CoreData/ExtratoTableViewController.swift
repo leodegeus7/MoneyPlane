@@ -36,6 +36,11 @@ class ExtratoTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+    
+        //var array = DataManager.instance.arrayTransacoes[0]
+        
+        
         return 5 
     }
     
@@ -44,18 +49,11 @@ class ExtratoTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell1 = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! ExtratoTableViewCell
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
+       
         if indexPath.row == (numerodeCells-1) {
             cell1.valorTransacao.text = "-35,00"
             cell1.dataTransacao.text = "Saldo"
+            
             if (cell1.valorTransacao.text as! NSString).containsString("-") {
                 cell1.valorTransacao.textColor = UIColor.redColor()
             

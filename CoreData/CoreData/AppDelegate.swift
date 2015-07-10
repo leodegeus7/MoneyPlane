@@ -18,14 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         DataManager.instance.importarIndiceFotoTXT()
         DataManager.instance.atualizarArrayPessoas()
-        
-        var pessoaLista = DataManager.instance.getPessoa()
-        for pessoa in pessoaLista! {
-            println("anTES \(pessoa.nome)")
-            println("anTES id!! \(pessoa.myPeerID)")
-            println("anTES \(pessoa.foto)")
-        }
-        println("ATE AQUI")
+        DataManager.instance.atualizarArrayTransacao()
+
+//        var pessoaLista = DataManager.instance.getPessoa()
+//        for pessoa in pessoaLista! {
+//            println("anTES \(pessoa.nome)")
+//            println("anTES id!! \(pessoa.myPeerID)")
+//            println("anTES \(pessoa.foto)")
+//        }
+            //println("\(DataManager.instance.arrayTransacoesDaPessoaTemporario)")
+            println("ATE AQUI")
         
         
         

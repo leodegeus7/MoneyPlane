@@ -37,6 +37,9 @@ class CollectionInicial: UICollectionViewController {
         
         loadAssets()
         
+        var array = DataManager.instance.arrayTransacoes
+        println("\(DataManager.instance.arrayTransacoes)")
+        
 
         
     }
@@ -217,6 +220,7 @@ extension CollectionInicial : UICollectionViewDataSource {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 
         
+        DataManager.instance.rowSelecionada = indexPath.row
         
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionInicialCell
         

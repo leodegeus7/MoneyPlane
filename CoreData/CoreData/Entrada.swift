@@ -10,6 +10,8 @@ import Foundation
 import CoreData
 
 class Entrada: NSManagedObject {
+    
+    static let shared: Entrada = Entrada()
 
     @NSManaged var data: NSDate
     @NSManaged var descricao: String

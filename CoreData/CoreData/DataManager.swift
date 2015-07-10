@@ -13,6 +13,7 @@ class DataManager {
     
     static let instance: DataManager = DataManager()
     var arrayPessoasConvertido = [NSDictionary]()
+    var arrayTransacoes = [[NSDictionary]]()
 
 
     var indiceFoto = 0
@@ -26,6 +27,8 @@ class DataManager {
     var valorTemporario = ""
     var transacaoTemporario = ""
     var saldoDosUsuarios = [Float]()
+    var rowSelecionada = 0
+    
     
     
     
@@ -330,6 +333,56 @@ class DataManager {
 
         
     }
+    
+    
+    func atualizarArrayTransacao() {
+        
+        
+        var arrayDePessoasCoreData = DataManager.instance.getPessoa()
+        var pessoaEscolhidaCoreData = arrayDePessoasCoreData?.first
+        
+        for pessoa in arrayDePessoasCoreData! {
+            var nomePessoa = pessoa.nome
+            var transacoesPessoa = [NSDictionary]()
+            for var i=0 ; i < pessoa.transacao.count ; i++ {
+                let entrada: Entrada = pessoa.transacao.array[i] as! Entrada
+                let valor = entrada.valor
+                let data = entrada.data
+                let descricao = entrada.descricao
+                let tipo = entrada.tipo
+                let dicionarioEntradas = ["valor":valor,"data":data,"descricao":descricao,"tipo":tipo]
+                transacoesPessoa.append(dicionarioEntradas)
+                
+            }
+            
+            let dicionarioPessoa = ["\(nomePessoa)":transacoesPessoa]
+
+            
+            arrayTransacoes.append(transacoesPessoa)
+            
+        }
+        
+        
+//        transacoesPessoasCoreData.data =
+//        
+//        var arrayDePessoas = arrayPessoasConvertido
+//        var pessoaEscolhida = arrayDePessoas[pessoa]
+//        var transacoesPessoas = pessoaEscolhida["transacao"] as! NSArray
+//        for var i = 0 ;i < transacoesPessoas.count ; i++ {
+//            var data =
+//        
+//
+    
+        
+   // println("\(array)")
+        
+    
+
+        
+}
+//
+
+    
 
     //func alterarNomePessoa(name:String) ->Bool {
     ////Carregar a pessoa com a qual a transaçao foi feita
