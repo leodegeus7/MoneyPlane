@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         DataManager.instance.importarIndiceFotoTXT()
         DataManager.instance.atualizarArrayPessoas()
-        DataManager.instance.atualizarArrayTransacao()
+        //DataManager.instance.atualizarArrayTransacao()
 
+        DataManager.instance.getTransacoesDeUsuario("leo2")
+        
 //        var pessoaLista = DataManager.instance.getPessoa()
 //        for pessoa in pessoaLista! {
 //            println("anTES \(pessoa.nome)")

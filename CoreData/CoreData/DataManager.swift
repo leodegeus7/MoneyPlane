@@ -33,6 +33,12 @@ class DataManager {
     
     var transacoesdaPessoaSelecionada = [NSDictionary]()
     
+    func mostrarInfo() {
+        var array = arrayTransacoes
+        println(array)
+        
+        
+    }
     
     func getPessoa()->[Pessoa]? {
         let request = NSFetchRequest(entityName: "Pessoa")
@@ -331,16 +337,56 @@ class DataManager {
             
         }
         
+        atualizarArrayPessoas()
+        getTransacoesDeUsuario(nome)
+        
         return managedContext.save(&error)
 
         
     }
     
+
+
+    func getTransacoesDeUsuario(nome: String) {
+        
+        transacoesdaPessoaSelecionada.removeAll(keepCapacity: false)
+        //Carregar a pessoa com a qual a transaçao foi feita
+        
+        let request = NSFetchRequest(entityName: "Pessoa")
+        request.predicate = NSPredicate(format: "nome BEGINSWITH[cd] %@", nome)
+        
+        
+        var error : NSError?
+        var objetos = managedContext.executeFetchRequest(request, error: &error)
+        
+        let pessoas = objetos as! [Pessoa]
+
+        
+        if(pessoas.count>0){
+            let pessoa = pessoas[0]
+            
+            let entradas = pessoa.transacao.mutableCopy() as! NSMutableOrderedSet
+            
+            for entrada in entradas {
+               // println("valor entrada \((entrada as! Entrada).valor)")
+                var valor = (entrada as! Entrada).valor
+                var data = (entrada as! Entrada).data
+                var descricao = (entrada as! Entrada).descricao
+                var tipo = (entrada as! Entrada).tipo
+                
+                var dicionarioEntradas = ["valor":valor,"data":data,"descricao":descricao,"tipo":tipo]
+                transacoesdaPessoaSelecionada.append(dicionarioEntradas)
+                
+            }
+        }
+        
+        print(transacoesdaPessoaSelecionada)
+    }
   
 
     
 //    func atualizarArrayTransacao() {
-//        
+//
 //        
 //        var arrayDePessoasCoreData = DataManager.instance.getPessoa()
 //        var pessoaEscolhidaCoreData = arrayDePessoasCoreData?.first
@@ -362,10 +408,11 @@ class DataManager {
 //            let dicionarioPessoa = ["\(nomePessoa)":transacoesPessoa]
 //
 //            
-//            arrayTransacoes.append(transacoesPessoa)
+//            arrayTransacoes.append(dicionarioPessoa)
 //            
 //        }
-//        
+//        println("\(arrayTransacoes)")
+//
 //        
 ////        transacoesPessoasCoreData.data =
 ////        
@@ -378,48 +425,10 @@ class DataManager {
 ////
 //    
 //        
-//   // println("\(array)")
-//    
 //        
-//}
-    
-    
-    
-    func getEntradasFromPessoa(nome: String){
-        transacoesdaPessoaSelecionada.removeAll(keepCapacity: false)
-        
-        let request = NSFetchRequest(entityName: "Pessoa")
-        request.predicate = NSPredicate(format: "nome BEGINSWITH[cd] %@", nome)
-        
-        
-        var error : NSError?
-        var objetos = managedContext.executeFetchRequest(request, error: &error)
-        
-        
-        let pessoas = objetos as! [Pessoa]
-        
-        
-        
-        if(pessoas.count>0){
-            let pessoa = pessoas[0]
-            
-            let entradas = pessoa.transacao.mutableCopy() as! NSMutableOrderedSet
-            
-            for entrada in entradas {
-                println("valor entrada \((entrada as! Entrada).valor)")
-                var valor = (entrada as! Entrada).valor
-                var data = (entrada as! Entrada).data
-                var descricao = (entrada as! Entrada).descricao
-                var tipo = (entrada as! Entrada).tipo
-                
-                var dicionarioEntradas = ["valor":valor,"data":data,"descricao":descricao,"tipo":tipo]
-                transacoesdaPessoaSelecionada.append(dicionarioEntradas)
-
-            }
-        }
-        
-        print(transacoesdaPessoaSelecionada)
-    }
+//        
+//       
+//    }
     
 //
 

@@ -40,9 +40,23 @@ class TransacaoViewController: UIViewController,UITextFieldDelegate {
                     if self!.controle {
                         if !(self!.transacaoTipo == "") {
                             if !(self!.textFieldTransacao.text.isEmpty){
-                                DataManager.instance.mandarValorParaOutroIphone(self!.textFieldTransacao.text)
-                                self!.shake()
-                                self!.textFieldTransacao.resignFirstResponder()
+                                var valorNegativo = "-\(self!.textFieldTransacao.text)"
+                                if self!.transacaoTipo == "entrada" {
+                                    
+                                    DataManager.instance.mandarValorParaOutroIphone(valorNegativo)
+                                    self!.shake()
+                                    self!.textFieldTransacao.resignFirstResponder()
+                                    
+                                
+                                }
+                                else  if self!.transacaoTipo == "saida" {
+                                    DataManager.instance.mandarValorParaOutroIphone(self!.textFieldTransacao.text)
+                                    self!.shake()
+                                    self!.textFieldTransacao.resignFirstResponder()
+                                    
+                                }
+                                
+
                                 
                                 
                             }

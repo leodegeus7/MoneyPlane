@@ -30,6 +30,7 @@ class CollectionInicial: UICollectionViewController {
 
     
 
+
     
     override func viewDidLoad() {
         pessoaLista = DataManager.instance.getPessoa()
@@ -203,12 +204,25 @@ extension CollectionInicial : UICollectionViewDataSource {
         cell.imagePessoa.layer.cornerRadius = 35.5
         cell.imagePessoa.clipsToBounds = true
         
+
+        cell.viewSaldo.layer.borderWidth = 2.0
+        cell.viewSaldo.layer.masksToBounds = false
+        cell.viewSaldo.layer.borderColor = UIColor.blackColor().CGColor
+        cell.viewSaldo.layer.cornerRadius = 35.5
+        cell.viewSaldo.clipsToBounds = true
         
+        
+        let nomeUser = pessoaListaArray[indexPath.row]["nome"] as? String
         let caminhoImagem = DataManager.instance.acharImagemUser(pessoaListaArray[indexPath.row]["foto"] as! String)
         println(caminhoImagem)
         cell.imagePessoa.image = UIImage(contentsOfFile: caminhoImagem)
-        cell.nomeLabel.text = pessoaListaArray[indexPath.row]["nome"] as? String
+        cell.nomeLabel.text = nomeUser
 
+        
+        let saldo = DataManager.instance.calcularSaldoDoUsuario(nomeUser!)
+        
+        cell.saldoLabel.text = "R$\(saldo)"
+        
         return cell
     }
     

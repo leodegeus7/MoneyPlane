@@ -36,40 +36,51 @@ class ExtratoTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        DataManager.instance.atualizarArrayTransacao()
-        var teste = DataManager.instance.arrayTransacoes
-        print(teste.count)
-
-         return DataManager.instance.arrayTransacoes[0]["\(DataManager.instance.nomeSelecionado)"]!.count
+//        DataManager.instance.atualizarArrayTransacao()
+//        var teste = DataManager.instance.arrayTransacoes
+//        print(teste.count)
+//
+//         return DataManager.instance.arrayTransacoes[0]["\(DataManager.instance.nomeSelecionado)"]!.count
         
+        var nome = DataManager.instance.nomeSelecionado
+        DataManager.instance.getTransacoesDeUsuario(nome)
         
+        return DataManager.instance.transacoesdaPessoaSelecionada.count
     }
     
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell1 = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! ExtratoTableViewCell
-
+        let valor: AnyObject? = DataManager.instance.transacoesdaPessoaSelecionada[indexPath.row]["valor"]
+        cell1.valorTransacao.text = "R$\(valor!)"
+        
+        let data: AnyObject? = DataManager.instance.transacoesdaPessoaSelecionada[indexPath.row]["data"]
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm"
+        var dataFormatada = dateFormatter.stringFromDate(data! as! NSDate)
+        
+        
+        
+        cell1.dataTransacao.text = "\(dataFormatada)"
+        
        
-        if indexPath.row == (numerodeCells-1) {
-            cell1.valorTransacao.text = "-35,00"
-            cell1.dataTransacao.text = "Saldo"
-            
-            if (cell1.valorTransacao.text as! NSString).containsString("-") {
-                cell1.valorTransacao.textColor = UIColor.redColor()
-            
-            }
-
-        } else {
-            cell1.dataTransacao.text = "01/01/2015"
-            cell1.valorTransacao.text = "-5,00"
-        }
+//        if indexPath.row == (numerodeCells-1) {
+//                       if (cell1.valorTransacao.text as! NSString).containsString("-") {
+//                cell1.valorTransacao.textColor = UIColor.redColor()
+//            
+//            }
+//
+//        } else {
+//            cell1.dataTransacao.text = "01/01/2015"
+//            cell1.valorTransacao.text = "-5,00"
+//        }
         return cell1
 
 
     }
 
-
+    
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
@@ -77,7 +88,8 @@ class ExtratoTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            //codigo para deletar transacao
+            DataManager.instance.deletarTransacaoDeUsuario(DataManager.instance.nomeSelecionado, indexTransacao: indexPath.row)
+            tableView.reloadData()
         }
     }
 

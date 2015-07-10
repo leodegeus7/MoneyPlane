@@ -14,6 +14,7 @@ class CollectionInicialCell: UICollectionViewCell {
 
     @IBOutlet weak var viewUsuario: UIView!
     
+    @IBOutlet weak var saldoLabel: UILabel!
 
     @IBOutlet weak var imagePessoa: UIImageView!
 
