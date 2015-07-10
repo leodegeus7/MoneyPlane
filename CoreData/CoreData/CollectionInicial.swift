@@ -20,11 +20,11 @@ var timer:NSTimer!
 var timerDesativarShake:NSTimer!
 let manager = CMMotionManager()
 var controleShake = true
-var pessoaLista = DataManager.instance.getPessoa()
 var pessoaListaArray = [NSDictionary]()
 var user = ""
 var str = ""
 var userNome = ""
+var pessoaLista: [Pessoa]?
 
 class CollectionInicial: UICollectionViewController {
 
@@ -32,24 +32,34 @@ class CollectionInicial: UICollectionViewController {
 
     
     override func viewDidLoad() {
+        pessoaLista = DataManager.instance.getPessoa()
+
+        
+        loadAssets()
+        
+
+        
+    }
+    
+    func loadAssets(){
         if manager.deviceMotionAvailable {
             manager.deviceMotionUpdateInterval = 0.02
             manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) {
                 [weak self] (data: CMDeviceMotion!, error: NSError!) in
                 //println("\(controleShake) \(data.userAcceleration.x)")
                 if data.userAcceleration.x > 1.5 && controleShake {
-                        shake()
-                        timerDesativarShake = NSTimer.scheduledTimerWithTimeInterval(40, target: self!, selector: Selector("desligarServico"), userInfo: nil, repeats: false)
-                        controleShake = false}
-                    
-                    
+                    shake()
+                    timerDesativarShake = NSTimer.scheduledTimerWithTimeInterval(40, target: self!, selector: Selector("desligarServico"), userInfo: nil, repeats: false)
+                    controleShake = false}
+                
+                
             }
         }
         
         for _ in 1...pessoaLista!.count {
             var trueBool = true
             controle.append(trueBool)}
-
+        
         for pessoa in pessoaLista! {
             let nome = pessoa.nome
             let myPeerId = pessoa.myPeerID
@@ -60,11 +70,8 @@ class CollectionInicial: UICollectionViewController {
             
             
         }
-        
-
-        
     }
-
+    
     func desligarServico() {
         multiPeer.serviceAdvertiser.stopAdvertisingPeer()
         multiPeer.serviceBrowser.stopBrowsingForPeers()
@@ -77,6 +84,11 @@ class CollectionInicial: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        pessoaLista = DataManager.instance.getPessoa()
+        loadAssets()
+        
+        self.collectionView?.reloadData()
+
         self.navigationController?.setToolbarHidden(false, animated: false)
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "alerta:", name: "receberData", object: nil)
