@@ -1,4 +1,4 @@
-# coreData
+# Money Plane (CoreData app)
 With this app was created a mechanism to send money to others with gestures.
 
 This app was my first app using CoreData library. The main goal is facilitate the money exchange between users. 
